@@ -71,8 +71,12 @@ in {
   };
 
   programs.git = {
+    enable = true;
     userEmail = "tatumonar@proton.me";
-    userName = "TatuMon";
+    userName = "tatumon";
+    extraConfig = {
+      init.defaultBranch = "main";
+    };
   };
 
   # Home Manager needs a bit of information about you and the paths it should
