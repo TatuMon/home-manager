@@ -61,6 +61,7 @@ in {
 
   programs.starship = import ./starship.nix { lib = pkgs.lib; };
   programs.zoxide.enable = true;
+  programs.ripgrep.enable = true;
 
   programs.bash = {
     enable = true;
