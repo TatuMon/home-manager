@@ -3,7 +3,7 @@
 # TODO
 # Nixvim:
 #   - Map the Replace aliases
-#   - Install and configure dap
+#   - Fix warnings
 let
   nixvim = import (builtins.fetchGit {
     url = "https://github.com/nix-community/nixvim";
@@ -60,11 +60,13 @@ in {
   };
 
   programs.starship = import ./starship.nix { lib = pkgs.lib; };
+  programs.zoxide.enable = true;
 
   programs.bash = {
     enable = true;
     bashrcExtra = ''
       eval "$(starship init bash)"
+      eval "$(zoxide init bash)"
 
       tmux a || tmux
     '';
