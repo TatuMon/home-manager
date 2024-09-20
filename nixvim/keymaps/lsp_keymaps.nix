@@ -13,7 +13,7 @@
   }
   {
     action = "<cmd>lua vim.lsp.buf.rename()<cr>";
-    key = "rs";
+    key = "<leader>rs";
     mode = "n";
     options.desc = "Rename symbol";
   }
