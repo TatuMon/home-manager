@@ -9,6 +9,8 @@ let
     url = "https://github.com/nix-community/nixvim";
     ref = "nixos-24.05";
   });
+
+  aerospace = import ./aerospace { pkgs = pkgs; };
 in {
   nixpkgs.config = {
     allowUnfree = true;
@@ -119,6 +121,7 @@ in {
     trash-cli
     spotify
     tldr
+    aerospace
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
