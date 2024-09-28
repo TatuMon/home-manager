@@ -18,7 +18,7 @@ in {
   };
 
   imports = [ nixvim.homeManagerModules.nixvim ];
-  programs.nixvim = import ./nixvim/nixvim.nix pkgs;
+  programs.nixvim = import ./nixvim pkgs;
 
   programs.kitty = {
     enable = true;
@@ -61,7 +61,7 @@ in {
     '';
   };
 
-  programs.starship = import ./starship.nix { lib = pkgs.lib; };
+  programs.starship = import ./starship { lib = pkgs.lib; };
   programs.zoxide.enable = true;
   programs.ripgrep.enable = true;
 
