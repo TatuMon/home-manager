@@ -65,9 +65,9 @@ in {
   programs.zoxide.enable = true;
   programs.ripgrep.enable = true;
 
-  programs.bash = {
+  programs.zsh = {
     enable = true;
-    bashrcExtra = ''
+    initExtra = ''
       eval "$(starship init bash)"
       eval "$(zoxide init bash)"
 
