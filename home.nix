@@ -125,6 +125,9 @@ in {
     trash-cli
     spotify
     tldr
+    fzf
+
+    # MY DERIVATIONS
     aerospace
 
     # FONTS
