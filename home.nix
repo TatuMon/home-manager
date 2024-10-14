@@ -1,9 +1,18 @@
-{ pkgs, ... }:
+/*
+  **************
+  *   README   *
+  **************
+
+  ESTA RAMA CONTIENE LA CONFIGURACION QUE USO EXCLUSIVAMENTE EN LA COMPU DEL
+  LABURO. NO DEBERIA ESTAR PUSHEADA EN NINGUN LADO PUBLICO
+*/
+
 
 # TODO
 # Nixvim:
 #   - Map the Replace aliases
 #   - Fix warnings
+{ pkgs, ... }:
 let
   nixvim = import (builtins.fetchGit {
     url = "https://github.com/nix-community/nixvim";
