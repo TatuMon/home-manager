@@ -24,6 +24,8 @@ in {
     enable = true;
     extraConfig = ''
       background_opacity 0.98
+      
+      font_family "FiraCode Nerd Font Mono"
     '';
   };
 
@@ -84,6 +86,8 @@ in {
     };
   };
 
+  fonts.fontconfig.enable = true;
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "tatumon";
@@ -122,6 +126,9 @@ in {
     spotify
     tldr
     aerospace
+
+    # FONTS
+    fira-code-nerdfont
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
