@@ -4,7 +4,7 @@ pkgs.stdenv.mkDerivation {
     meta = {
         description = "i3 for macOS";
         homepage = "https://nikitabobko.github.io/AeroSpace/guide";
-        platforms = [ pkgs.lib.platforms.darwin ];
+        platforms = pkgs.lib.platforms.darwin ++ [ "aarch64-apple-darwin" ];
     };
 
     src = pkgs.fetchzip {
