@@ -78,6 +78,7 @@ in {
 
   programs.zsh = {
     enable = true;
+    enableCompletion = false;
     initExtra = ''
       eval "$(starship init bash)"
       eval "$(zoxide init bash)"
