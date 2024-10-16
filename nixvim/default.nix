@@ -124,8 +124,6 @@ pkgs:
 
     markdown-preview = { enable = true; };
 
-    neoscroll = { enable = true; };
-
     nvim-autopairs = { enable = true; };
 
     nvim-tree = { enable = true; };
@@ -136,8 +134,10 @@ pkgs:
 
     dashboard = { enable = true; };
 
-    gitblame.enable = true;
-    gitsigns.enable = true;
+    gitsigns = {
+      enable = true;
+      settings.current_line_blame = true;
+    };
 
     lazygit = { enable = true; };
 
