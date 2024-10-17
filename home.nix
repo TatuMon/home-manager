@@ -2,7 +2,6 @@
 
 # TODO
 # Nixvim:
-#   - Map the Replace aliases
 #   - Fix warnings
 let
   nixvim = import (builtins.fetchGit {
