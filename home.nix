@@ -10,7 +10,6 @@
 
 # TODO
 # Nixvim:
-#   - Map the Replace aliases
 #   - Fix warnings
 { pkgs, ... }:
 let
