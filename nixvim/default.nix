@@ -1,6 +1,5 @@
 # Nixvim manual: https://nix-community.github.io/nixvim/
-pkgs:
-{
+pkgs: {
   enable = true;
   colorschemes.gruvbox.enable = true;
   clipboard.providers.xclip.enable = true;
@@ -26,12 +25,12 @@ pkgs:
 
   keymaps = import ./keymaps/keymaps.nix;
 
-  extraPlugins = [
-    {
-      plugin = pkgs.vimPlugins.outline-nvim;
-      config = "lua require('outline').setup({})";
-    }
-  ];
+  userCommands = import ./userCommands;
+
+  extraPlugins = [{
+    plugin = pkgs.vimPlugins.outline-nvim;
+    config = "lua require('outline').setup({})";
+  }];
 
   plugins = {
     treesitter.enable = true;
