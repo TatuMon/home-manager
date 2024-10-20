@@ -141,6 +141,7 @@ in {
 
     # FONTS
     fira-code-nerdfont
+    ranger
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
