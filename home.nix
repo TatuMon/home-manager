@@ -118,6 +118,7 @@ in {
     trash-cli
     spotify
     tldr
+    ranger
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
