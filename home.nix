@@ -135,13 +135,13 @@ in {
     spotify
     tldr
     fzf
+    ranger
 
     # MY DERIVATIONS
     aerospace
 
     # FONTS
     fira-code-nerdfont
-    ranger
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
