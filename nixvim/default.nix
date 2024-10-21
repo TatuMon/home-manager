@@ -47,7 +47,7 @@ pkgs: {
       enable = true;
       servers = {
         nil-ls.enable = true; # Nix
-        phpactor.enable = true; # PHP
+        intelephense.enable = true; # PHP
         gopls.enable = true; # Go
         golangci-lint-ls.enable = true; # Golanci-lint
         rust-analyzer = {
