@@ -1,7 +1,7 @@
 # Nixvim manual: https://nix-community.github.io/nixvim/
 pkgs: {
   enable = true;
-  colorschemes.gruvbox.enable = true;
+  colorschemes.nord.enable = true;
   clipboard.providers.xclip.enable = true;
 
   globals = { mapleader = " "; };
