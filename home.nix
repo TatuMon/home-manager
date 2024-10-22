@@ -38,14 +38,8 @@ in {
 
       set -g @resurrect-strategy-nvim 'session'
 
-      set -g @dracula-plugins "time network-bandwidth"
+      set -g @dracula-plugins "time"
       set -g @dracula-show-powerline true
-      set -g @dracula-show-fahrenheit false
-      set -g @dracula-military-time true
-      set -g @dracula-day-month true
-      set -g @dracula-network-bandwidth eth0
-      set -g @dracula-network-bandwidth-interval 0
-      set -g @dracula-network-bandwidth-show-interface true
 
       set -g @continuum-boot 'on'
 
