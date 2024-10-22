@@ -130,6 +130,7 @@ in {
     tldr
     fzf
     ranger
+    flameshot
 
     # MY DERIVATIONS
     aerospace
