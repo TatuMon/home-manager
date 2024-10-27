@@ -149,6 +149,8 @@ in {
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+
+    ".aerospace.toml".text = import ./aerospace/dotfile.nix;
   };
 
   # Home Manager can also manage your environment variables through
