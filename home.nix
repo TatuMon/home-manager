@@ -129,6 +129,8 @@ in {
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+
+    ".todo/config".text = import ./todotxt/dotfile.nix;
   };
 
   # Home Manager can also manage your environment variables through
