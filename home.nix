@@ -151,6 +151,7 @@ in {
     # '';
 
     ".aerospace.toml".text = import ./aerospace/dotfile.nix;
+    ".todo/config".text = import ./todotxt/dotfile.nix;
   };
 
   # Home Manager can also manage your environment variables through
