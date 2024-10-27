@@ -1,12 +1,10 @@
-/*
-  **************
-  *   README   *
-  **************
+/* **************
+   *   README   *
+   **************
 
-  ESTA RAMA CONTIENE LA CONFIGURACION QUE USO EXCLUSIVAMENTE EN LA COMPU DEL
-  LABURO. NO DEBERIA ESTAR PUSHEADA EN NINGUN LADO PUBLICO
+   ESTA RAMA CONTIENE LA CONFIGURACION QUE USO EXCLUSIVAMENTE EN LA COMPU DEL
+   LABURO. NO DEBERIA ESTAR PUSHEADA EN NINGUN LADO PUBLICO
 */
-
 
 # TODO
 # Nixvim:
@@ -32,7 +30,7 @@ in {
     enable = true;
     extraConfig = ''
       background_opacity 0.98
-      
+
       font_family "FiraCode Nerd Font Mono"
     '';
   };
@@ -84,9 +82,7 @@ in {
     enable = true;
     userEmail = "tatumonar@proton.me";
     userName = "tatumon";
-    extraConfig = {
-      init.defaultBranch = "main";
-    };
+    extraConfig = { init.defaultBranch = "main"; };
   };
 
   fonts.fontconfig.enable = true;
