@@ -138,7 +138,6 @@ in {
 
     # FONTS
     fira-code-nerdfont
-    todo-txt-cli
     asdf-vm
   ];
 
