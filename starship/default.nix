@@ -3,7 +3,7 @@
   enable = true;
   enableBashIntegration = true;
   settings = {
-    format = lib.concatStrings [
+    format = ''
       "[░▒▓](#a3aed2)"
       "[ 👽 ](bg:#a3aed2 fg:#090c0c)"
       "$nix_shell"
@@ -16,7 +16,7 @@
       "$time"
       "[ ](fg:#1d2230)"
       "\n$character"
-    ];
+    '';
     directory = {
       style = "fg:#e3e5e5 bg:#769ff0";
       format = "[ $path ]($style)";
