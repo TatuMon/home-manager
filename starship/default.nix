@@ -1,7 +1,6 @@
 { lib }:
 {
   enable = true;
-  enableBashIntegration = true;
   settings = {
     format = lib.concatStrings [
       "[░▒▓](#a3aed2)"
@@ -64,24 +63,3 @@
     };
   };
 }
-
-# [rust]
-# symbol = ""
-# style = "bg:#212736"
-# format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
-# 
-# [golang]
-# symbol = ""
-# style = "bg:#212736"
-# format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
-# 
-# [php]
-# symbol = ""
-# style = "bg:#212736"
-# format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
-# 
-# [time]
-# disabled = false
-# time_format = "%R" # Hour:Minute Format
-# style = "bg:#1d2230"
-# Format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'

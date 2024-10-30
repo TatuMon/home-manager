@@ -39,6 +39,9 @@ in {
 
   programs.tmux = {
     enable = true;
+    clock24 = true;
+    mouse = true;
+    newSession = true;
     plugins = with pkgs.tmuxPlugins; [ continuum resurrect dracula sensible ];
     extraConfig = ''
       setw -g mouse on
@@ -69,12 +72,9 @@ in {
 
   programs.zsh = {
     enable = true;
-    enableCompletion = false;
+    enableCompletion = true;
     initExtra = ''
-      eval "$(starship init bash)"
-      eval "$(zoxide init bash)"
-
-      tmux a || tmux
+      tmux
     '';
   };
 
