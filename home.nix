@@ -61,6 +61,7 @@ in {
     bashrcExtra = ''
       eval "$(starship init bash)"
       eval "$(zoxide init bash)"
+      eval "$(direnv hook bash)"
 
       tmux a || tmux
     '';
@@ -74,6 +75,8 @@ in {
       init.defaultBranch = "main";
     };
   };
+
+  services.lorri.enable = true;
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -113,7 +116,7 @@ in {
     spotify
     tldr
     ranger
-    asdf-vm
+    direnv
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
