@@ -91,6 +91,7 @@ in {
   };
 
   fonts.fontconfig.enable = true;
+  services.lorri.enable = true;
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -139,6 +140,7 @@ in {
     # FONTS
     fira-code-nerdfont
     asdf-vm
+    direnv
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
