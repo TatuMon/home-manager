@@ -55,6 +55,7 @@ in {
   programs.starship = import ./starship { lib = pkgs.lib; };
   programs.zoxide.enable = true;
   programs.ripgrep.enable = true;
+  programs.direnv.enable = true;
 
   programs.bash = {
     enable = true;
@@ -116,7 +117,6 @@ in {
     spotify
     tldr
     ranger
-    direnv
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
