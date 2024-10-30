@@ -1,6 +1,7 @@
 { lib }:
 {
   enable = true;
+  enableZshIntegration = true;
   settings = {
     format = lib.concatStrings [
       "[░▒▓](#a3aed2)"

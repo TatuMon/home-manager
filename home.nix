@@ -7,6 +7,8 @@
 */
 
 # TODO
+# Zsh:
+#   - Fix autocompletion
 # Nixvim:
 #   - Fix warnings
 { pkgs, ... }:
@@ -67,12 +69,15 @@ in {
   };
 
   programs.starship = import ./starship { lib = pkgs.lib; };
-  programs.zoxide.enable = true;
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
   programs.ripgrep.enable = true;
 
   programs.zsh = {
     enable = true;
-    enableCompletion = true;
+    enableCompletion = false;
     initExtra = ''
       tmux
     '';
