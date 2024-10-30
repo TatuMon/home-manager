@@ -139,6 +139,7 @@ in {
     # FONTS
     fira-code-nerdfont
     todo-txt-cli
+    asdf-vm
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
