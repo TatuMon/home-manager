@@ -139,7 +139,6 @@ in {
 
     # FONTS
     fira-code-nerdfont
-    asdf-vm
     direnv
   ];
 
