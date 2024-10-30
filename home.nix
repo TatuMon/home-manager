@@ -74,7 +74,10 @@ in {
     enableZshIntegration = true;
   };
   programs.ripgrep.enable = true;
-  programs.direnv.enable = true;
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 
   programs.zsh = {
     enable = true;
@@ -140,7 +143,6 @@ in {
 
     # FONTS
     fira-code-nerdfont
-    direnv
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
