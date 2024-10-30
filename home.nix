@@ -74,6 +74,7 @@ in {
     enableZshIntegration = true;
   };
   programs.ripgrep.enable = true;
+  programs.direnv.enable = true;
 
   programs.zsh = {
     enable = true;
