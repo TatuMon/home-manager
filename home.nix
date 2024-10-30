@@ -74,10 +74,6 @@ in {
     enableZshIntegration = true;
   };
   programs.ripgrep.enable = true;
-  programs.direnv = {
-    enable = true;
-    enableZshIntegration = true;
-  };
 
   programs.zsh = {
     enable = true;
@@ -95,7 +91,6 @@ in {
   };
 
   fonts.fontconfig.enable = true;
-  services.lorri.enable = true;
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
