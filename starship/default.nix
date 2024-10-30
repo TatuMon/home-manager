@@ -3,20 +3,20 @@
   enable = true;
   enableZshIntegration = true;
   settings = {
-    format = ''
+    format = lib.concatStrings [
       "[░▒▓](#a3aed2)"
       "[ 👽 ](bg:#a3aed2 fg:#090c0c)"
       "$nix_shell"
-      "[](bg:#769ff0 fg:#a3aed2)"
+      "[ ](bg:#769ff0 fg:#a3aed2)"
       "$directory"
-      "[](fg:#769ff0 bg:#394260)"
+      "[ ](fg:#769ff0 bg:#394260)"
       "$git_branch"
       "$git_status"
-      "[](fg:#394260 bg:#1d2230)"
+      "[ ](fg:#394260 bg:#1d2230)"
       "$time"
-      "[ ](fg:#1d2230)"
-      "\n$character"
-    '';
+      "[  ](fg:#1d2230)"
+      "$character"
+    ];
     directory = {
       style = "fg:#e3e5e5 bg:#769ff0";
       format = "[ $path ]($style)";
