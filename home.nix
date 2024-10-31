@@ -117,6 +117,8 @@ in {
     spotify
     tldr
     ranger
+
+    flameshot
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
