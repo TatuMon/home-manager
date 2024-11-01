@@ -60,7 +60,7 @@ pkgs: {
         nginx-language-server.enable = true; # Nginx
         lua-ls.enable = true; # Lua
         sqls.enable = true; # SQL
-        eslint.enable = true; # HTML, CSS, JSON and JS/TS
+        eslint.enable = true; # HTML, CSS, JSON
         tailwindcss.enable = true; # Tailwindcss
         yamlls.enable = true; # YAML
         bashls.enable = true; # Bash
@@ -69,6 +69,8 @@ pkgs: {
         dockerls.enable = true; # Dockerfile
       };
     };
+
+    typescript-tools.enable = true;
 
     none-ls = {
       enable = true;
