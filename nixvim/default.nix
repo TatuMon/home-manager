@@ -50,11 +50,7 @@ pkgs: {
         intelephense.enable = true; # PHP
         gopls.enable = true; # Go
         golangci-lint-ls.enable = true; # Golanci-lint
-        rust-analyzer = {
-          enable = true;
-          installCargo = true;
-          installRustc = true;
-        };
+        rust-analyzer.enable = true; # Rust
         pylsp.enable = true; # Python
         omnisharp.enable = true; # .NET
         nginx-language-server.enable = true; # Nginx
@@ -124,8 +120,6 @@ pkgs: {
     lualine = { enable = true; };
 
     markdown-preview = { enable = true; };
-
-    neoscroll = { enable = true; };
 
     nvim-autopairs = { enable = true; };
 
