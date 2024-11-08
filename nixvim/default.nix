@@ -20,7 +20,7 @@ pkgs: {
     scrolloff = 8;
     signcolumn = "yes";
     updatetime = 50;
-    colorcolumn = "80";
+    colorcolumn = 100;
   };
 
   keymaps = import ./keymaps/keymaps.nix;
