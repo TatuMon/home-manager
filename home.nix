@@ -8,6 +8,15 @@ let
     url = "https://github.com/nix-community/nixvim";
     ref = "nixos-24.05";
   });
+
+  nixpkgs2411 = import (
+    if builtins.pathExists <nixpkgs2411> then
+      <nixpkgs2411>
+    else
+      fetchTarball "https://releases.nixos.org/nixpkgs/24.11-darwin/nixpkgs-darwin-24.11pre708685.8d48200ead5a/nixexprs.tar.xz"
+  ) {};
+
+  aerospace = import ./aerospace { pkgs = pkgs; };
 in {
   nixpkgs.config = {
     allowUnfree = true;
@@ -19,9 +28,13 @@ in {
 
   programs.kitty = {
     enable = true;
+    font = {
+      name = "GohuFont uni14 Nerd Font";
+    };
     extraConfig = ''
       background_opacity 0.98
     '';
+    package = nixpkgs2411.pkgs.kitty;
   };
 
   programs.btop.enable = true;
@@ -104,7 +117,7 @@ in {
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    (pkgs.nerdfonts.override { fonts = [ "Gohu" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
