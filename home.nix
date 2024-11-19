@@ -42,8 +42,6 @@ in {
     };
     extraConfig = ''
       background_opacity 0.98
-
-      font_family "FiraCode Nerd Font Mono"
     '';
     package = nixpkgs2411.pkgs.kitty;
   };
