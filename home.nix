@@ -29,7 +29,7 @@ in {
   programs.kitty = {
     enable = true;
     font = {
-      name = "GohuFont uni14 Nerd Font";
+      name = "GohuFont uni14 Nerd Font Mono";
     };
     extraConfig = ''
       background_opacity 0.98
