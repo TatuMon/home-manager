@@ -130,6 +130,7 @@ in {
     spotify
     tldr
     ranger
+    elixir_1_16
 
     flameshot
   ];

@@ -63,6 +63,7 @@ pkgs: {
         ccls.enable = true; # C/C++/Obj.C
         cmake.enable = true; # CMake
         dockerls.enable = true; # Dockerfile
+        elixirls.enable = true; # Elixir
       };
       postConfig = ''
         local _border = "rounded"
