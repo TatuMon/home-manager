@@ -140,6 +140,8 @@ in {
     tldr
     fzf
     ranger
+    elixir_1_16
+
     flameshot
 
     # MY DERIVATIONS
