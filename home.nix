@@ -96,7 +96,10 @@ in {
     enable = true;
     userEmail = "tatumonar@proton.me";
     userName = "tatumon";
-    extraConfig = { init.defaultBranch = "main"; };
+    extraConfig = { 
+      init.defaultBranch = "main";
+      core.editor = "nvim";
+    };
   };
 
   fonts.fontconfig.enable = true;
