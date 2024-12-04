@@ -85,8 +85,9 @@ in {
     enable = true;
     userEmail = "tatumonar@proton.me";
     userName = "tatumon";
-    extraConfig = {
+    extraConfig = { 
       init.defaultBranch = "main";
+      core.editor = "nvim";
     };
   };
 
