@@ -99,6 +99,7 @@ in {
     extraConfig = { 
       init.defaultBranch = "main";
       core.editor = "nvim";
+      alias.stashall = "stash --include-untracked";
     };
   };
 
