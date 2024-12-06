@@ -27,10 +27,16 @@ pkgs: {
 
   userCommands = import ./userCommands;
 
-  extraPlugins = [{
-    plugin = pkgs.vimPlugins.outline-nvim;
-    config = "lua require('outline').setup({})";
-  }];
+  extraPlugins = with pkgs.vimPlugins;[
+    {
+      plugin = outline-nvim;
+      config = "lua require('outline').setup({})";
+    }
+    {
+      plugin = nvim-scrollbar;
+      config = "lua require('scrollbar').setup({})";
+    }
+  ];
 
   plugins = {
     treesitter.enable = true;
