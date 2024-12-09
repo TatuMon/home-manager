@@ -26,16 +26,7 @@ in {
   imports = [ nixvim.homeManagerModules.nixvim ];
   programs.nixvim = import ./nixvim pkgs;
 
-  programs.kitty = {
-    enable = true;
-    font = {
-      name = "GohuFont uni14 Nerd Font Mono";
-    };
-    extraConfig = ''
-      background_opacity 0.98
-    '';
-    package = nixpkgs2411.pkgs.kitty;
-  };
+  programs.kitty = import ./kitty nixpkgs2411;
 
   programs.btop.enable = true;
 
