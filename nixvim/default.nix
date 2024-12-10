@@ -1,7 +1,12 @@
 # Nixvim manual: https://nix-community.github.io/nixvim/
 pkgs: {
   enable = true;
-  colorschemes.tokyonight.enable = true;
+  colorschemes.tokyonight = {
+    enable = true;
+    settings = {
+      style = "day";
+    };
+  };
   clipboard.providers.xclip.enable = true;
 
   globals = { mapleader = " "; };
