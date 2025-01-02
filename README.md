@@ -1,3 +1,3 @@
 # TO-DOs (ordered by priority)
-- [ ] Fix starship settings.format
-- [ ] Fix warnings
+- Update to 24.11
+- Fix warnings
