@@ -1,3 +1,4 @@
+# Minimun nixpkgs version: 24.11
 { pkgs, ... }:
 
 # TODO
@@ -6,15 +7,8 @@
 let
   nixvim = import (builtins.fetchGit {
     url = "https://github.com/nix-community/nixvim";
-    ref = "nixos-24.05";
+    ref = "nixos-24.11";
   });
-
-  nixpkgs2411 = import (
-    if builtins.pathExists <nixpkgs2411> then
-      <nixpkgs2411>
-    else
-      fetchTarball "https://releases.nixos.org/nixpkgs/24.11-darwin/nixpkgs-darwin-24.11pre708685.8d48200ead5a/nixexprs.tar.xz"
-  ) {};
 
   aerospace = import ./aerospace { pkgs = pkgs; };
 in {
@@ -26,7 +20,7 @@ in {
   imports = [ nixvim.homeManagerModules.nixvim ];
   programs.nixvim = import ./nixvim pkgs;
 
-  programs.kitty = import ./kitty nixpkgs2411;
+  programs.kitty = import ./kitty pkgs;
 
   programs.btop.enable = true;
 
@@ -110,7 +104,8 @@ in {
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
-    (pkgs.nerdfonts.override { fonts = [ "Gohu" ]; })
+    pkgs.nerd-fonts.gohufont
+    pkgs.nerd-fonts.roboto-mono
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -123,7 +118,7 @@ in {
     spotify
     tldr
     ranger
-    elixir_1_16
+    elixir_1_18
 
     flameshot
   ];
