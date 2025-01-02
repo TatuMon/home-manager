@@ -120,6 +120,7 @@ in {
     elixir_1_18
 
     flameshot
+    brave
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
