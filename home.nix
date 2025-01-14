@@ -1,27 +1,26 @@
 # Minimun nixpkgs version: 24.11
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
-# TODO
-# Nixvim:
-#   - Fix warnings
 let
   nixvim = import (builtins.fetchGit {
     url = "https://github.com/nix-community/nixvim";
     ref = "nixos-24.11";
   });
-
-  aerospace = import ./aerospace { pkgs = pkgs; };
 in {
+  nixGL.packages = import <nixgl> { inherit pkgs; };
+
   nixpkgs.config = {
     allowUnfree = true;
     allowUnfreePredicate = (_: true);
   };
 
   imports = [ nixvim.homeManagerModules.nixvim ];
+
   programs.nixvim = import ./nixvim pkgs;
-
-  programs.kitty = import ./kitty pkgs;
-
+  programs.kitty = import ./kitty {
+    pkgs = pkgs;
+    config = config;
+  };
   programs.btop.enable = true;
 
   programs.tmux = {
@@ -70,7 +69,7 @@ in {
     enable = true;
     userEmail = "tatumonar@proton.me";
     userName = "tatumon";
-    extraConfig = { 
+    extraConfig = {
       init.defaultBranch = "main";
       core.editor = "nvim";
       alias.stashall = "stash --include-untracked";
@@ -114,7 +113,7 @@ in {
     elixir_1_18
 
     flameshot
-    brave
+    (config.lib.nixGL.wrap brave)
 
     # FONTS
     nerd-fonts.gohufont
