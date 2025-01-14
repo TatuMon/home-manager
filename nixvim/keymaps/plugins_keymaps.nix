@@ -13,7 +13,7 @@ in
 [
   # NvimTree
   {
-    action = "<cmd>NvimTreeToggle<cr>";
+    action = "<cmd>Neotree<cr>";
     key = "<leader>bb";
     mode = "n";
     options.desc = "Toggle file tree";
