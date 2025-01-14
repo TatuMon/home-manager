@@ -1,3 +1,4 @@
+# Minimun nixpkgs version: 24.11
 { pkgs, ... }:
 
 # TODO
@@ -6,15 +7,8 @@
 let
   nixvim = import (builtins.fetchGit {
     url = "https://github.com/nix-community/nixvim";
-    ref = "nixos-24.05";
+    ref = "nixos-24.11";
   });
-
-  nixpkgs2411 = import (
-    if builtins.pathExists <nixpkgs2411> then
-      <nixpkgs2411>
-    else
-      fetchTarball "https://releases.nixos.org/nixpkgs/24.11-darwin/nixpkgs-darwin-24.11pre708685.8d48200ead5a/nixexprs.tar.xz"
-  ) {};
 
   aerospace = import ./aerospace { pkgs = pkgs; };
 in {
@@ -26,7 +20,7 @@ in {
   imports = [ nixvim.homeManagerModules.nixvim ];
   programs.nixvim = import ./nixvim pkgs;
 
-  programs.kitty = import ./kitty nixpkgs2411;
+  programs.kitty = import ./kitty pkgs;
 
   programs.btop.enable = true;
 
@@ -97,7 +91,7 @@ in {
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "24.05"; # Please read the comment before changing.
+  home.stateVersion = "24.11"; # Please read the comment before changing.
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -105,12 +99,6 @@ in {
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    (pkgs.nerdfonts.override { fonts = [ "Gohu" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -123,9 +111,14 @@ in {
     spotify
     tldr
     ranger
-    elixir_1_16
+    elixir_1_18
 
     flameshot
+    brave
+
+    # FONTS
+    nerd-fonts.gohufont
+    nerd-fonts.jetbrains-mono
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
