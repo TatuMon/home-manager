@@ -3,5 +3,5 @@
 - `macos` correspond to the configuration I use in my, as you would've guessed, MacOS machine
 
 # TO-DOs (ordered by priority)
-- Update to 24.11
+- Define some [`xdg.desktopEntries`](https://nix-community.github.io/home-manager/options.xhtml#opt-xdg.desktopEntries) to create .desktop files that wraps opengl-dependant packages with [`NixGL`](https://github.com/nix-community/nixGL) 
 - Fix warnings
