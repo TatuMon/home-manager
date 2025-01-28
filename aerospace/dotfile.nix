@@ -159,4 +159,90 @@ alt-shift-l = ['join-with right', 'mode main']
 [workspace-to-monitor-force-assignment]
 1 = 'main'
 2 = 'secondary'
+
+############################################
+# MOVE APPLICATIONS TO SPECIFIC WORKSPACES #
+############################################
+
+# Workspace 1: Social apps
+##################################
+
+# WhatsApp
+[[on-window-detected]]
+    if.app-id = 'net.whatsapp.WhatsApp'
+    run = 'move-node-to-workspace 1'
+
+# Discord
+[[on-window-detected]]
+    if.app-id = 'com.hnc.Discord'
+    run = 'move-node-to-workspace 1'
+
+# Thunderbird
+[[on-window-detected]]
+    if.app-id = 'org.mozilla.thunderbird'
+    run = 'move-node-to-workspace 1'
+
+# Workspace 2: Terminal / Code editor
+##################################
+
+# Kitty
+[[on-window-detected]]
+    if.app-id = 'net.kovidgoyal.kitty'
+    run = 'move-node-to-workspace 2'
+
+# Workspace 3: Personal apps
+##################################
+
+# Brave
+[[on-window-detected]]
+    if.app-id = 'com.brave.Browser'
+    run = 'move-node-to-workspace 3'
+
+# Spotify
+[[on-window-detected]]
+    if.app-id = 'org.mozilla.thunderbird'
+    run = 'move-node-to-workspace 3'
+
+# Notion
+[[on-window-detected]]
+    if.app-id = 'notion.id'
+    run = 'move-node-to-workspace 3'
+
+# Workspace 4: Work apps
+##################################
+
+# Docker
+[[on-window-detected]]
+    if.app-id = 'com.docker.docker'
+    run = 'move-node-to-workspace 4'
+
+# DBeaver
+[[on-window-detected]]
+    if.app-id = 'com.jkiss.dbeaver.core.product'
+    run = 'move-node-to-workspace 4'
+
+# OpenVPN Connect
+[[on-window-detected]]
+    if.app-id = 'org.openvpn.client.app'
+    run = 'move-node-to-workspace 4'
+
+# FileZilla
+[[on-window-detected]]
+    if.app-id = 'org.filezilla-project.filezilla'
+    run = 'move-node-to-workspace 4'
+
+# Postman
+[[on-window-detected]]
+    if.app-id = 'com.postmanlabs.mac'
+    run = 'move-node-to-workspace 4'
+
+# MAMP
+[[on-window-detected]]
+    if.app-id = 'de.appsolute.MAMP'
+    run = 'move-node-to-workspace 4'
+
+# Windows Remote Desktop
+[[on-window-detected]]
+    if.app-id = 'com.microsoft.rdc.macos'
+    run = 'move-node-to-workspace 4'
 ''
