@@ -28,12 +28,12 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 accordion-padding = 30
 
 # Possible values: tiles|accordion
-default-root-container-layout = 'tiles'
+default-root-container-layout = 'accordion'
 
 # Possible values: horizontal|vertical|auto
 # 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
 #               tall monitor (anything higher than wide) gets vertical orientation
-default-root-container-orientation = 'auto'
+default-root-container-orientation = 'vertical'
 
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -164,30 +164,30 @@ alt-shift-l = ['join-with right', 'mode main']
 # MOVE APPLICATIONS TO SPECIFIC WORKSPACES #
 ############################################
 
-# Workspace 1: Social apps
+# Workspace 1: Terminal / Code editor
+##################################
+
+# Kitty
+[[on-window-detected]]
+if.app-id = 'net.kovidgoyal.kitty'
+run = 'move-node-to-workspace 1'
+
+# Workspace 2: Social apps
 ##################################
 
 # WhatsApp
 [[on-window-detected]]
     if.app-id = 'net.whatsapp.WhatsApp'
-    run = 'move-node-to-workspace 1'
+    run = 'move-node-to-workspace 2'
 
 # Discord
 [[on-window-detected]]
     if.app-id = 'com.hnc.Discord'
-    run = 'move-node-to-workspace 1'
+    run = 'move-node-to-workspace 2'
 
 # Thunderbird
 [[on-window-detected]]
     if.app-id = 'org.mozilla.thunderbird'
-    run = 'move-node-to-workspace 1'
-
-# Workspace 2: Terminal / Code editor
-##################################
-
-# Kitty
-[[on-window-detected]]
-    if.app-id = 'net.kovidgoyal.kitty'
     run = 'move-node-to-workspace 2'
 
 # Workspace 3: Personal apps
