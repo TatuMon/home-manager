@@ -136,7 +136,10 @@ in {
     fzf
     ranger
     elixir_1_16
+
+    # CLI Timer | CLI Pomodoro
     timer
+    terminal-notifier
 
     flameshot
 
