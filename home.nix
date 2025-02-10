@@ -136,6 +136,7 @@ in {
     fzf
     ranger
     elixir_1_16
+    timer
 
     flameshot
 
