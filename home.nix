@@ -1,11 +1,3 @@
-/* **************
-   *   README   *
-   **************
-
-   ESTA RAMA CONTIENE LA CONFIGURACION QUE USO EXCLUSIVAMENTE EN LA COMPU DEL
-   LABURO. NO DEBERIA ESTAR PUSHEADA EN NINGUN LADO PUBLICO
-*/
-
 # TODO
 # Zsh:
 #   - Fix autocompletion
