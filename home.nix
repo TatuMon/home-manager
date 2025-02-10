@@ -25,11 +25,10 @@ in {
 
   programs.tmux = {
     enable = true;
+    baseIndex = 1;
     plugins = with pkgs.tmuxPlugins; [ continuum resurrect dracula sensible ];
     extraConfig = ''
       setw -g mouse on
-
-      set -g base-index 1
       setw -g pane-base-index 1
       set -g repeat-time 1000
 
@@ -39,6 +38,7 @@ in {
       set -g @dracula-show-powerline true
 
       set -g @continuum-boot 'on'
+      set -g @continuum-restore 'on'
 
       resurrect_dir="$HOME/.tmux/resurrect"
       set -g @resurrect-dir $resurrect_dir
