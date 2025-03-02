@@ -62,10 +62,14 @@ pkgs: {
         nil_ls.enable = true; # Nix
         gopls.enable = true; # Go
         golangci_lint_ls.enable = true; # Golanci-lint
-        rust_analyzer.enable = true; # Rust
+        rust_analyzer = { # Rust
+          enable = true;
+          installCargo = false;
+          installRustc = false;
+        };
         pylsp.enable = true; # Python
         omnisharp.enable = true; # .NET
-        nginx-language-server.enable = true; # Nginx
+        nginx_language_server.enable = true; # Nginx
         lua_ls.enable = true; # Lua
         sqls.enable = true; # SQL
         eslint.enable = true; # HTML, CSS, JSON
