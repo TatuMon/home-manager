@@ -23,31 +23,7 @@ in {
   };
   programs.btop.enable = true;
 
-  programs.tmux = {
-    enable = true;
-    baseIndex = 1;
-    plugins = with pkgs.tmuxPlugins; [ continuum resurrect dracula sensible ];
-    extraConfig = ''
-      setw -g mouse on
-      setw -g pane-base-index 1
-      set -g repeat-time 1000
-
-      set -g @resurrect-strategy-nvim 'session'
-
-      set -g @dracula-plugins "time"
-      set -g @dracula-show-powerline true
-
-      set -g @continuum-boot 'on'
-      set -g @continuum-restore 'on'
-
-      resurrect_dir="$HOME/.tmux/resurrect"
-      set -g @resurrect-dir $resurrect_dir
-      set -g @resurrect-hook-post-save-all 'target=$(readlink -f $resurrect_dir/last); sed "s| --cmd .*-vim-pack-dir||g; s|/etc/profiles/per-user/$USER/bin/||g; s|/home/$USER/.nix-profile/bin/||g" $target | sponge $target'
-
-      run-shell ${pkgs.tmuxPlugins.dracula}/dracula.tmux
-      run-shell ${pkgs.tmuxPlugins.resurrect}/resurrect.tmux
-    '';
-  };
+  programs.tmux = import ./tmux pkgs;
 
   programs.starship = import ./starship { lib = pkgs.lib; };
   programs.zoxide.enable = true;
