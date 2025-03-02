@@ -4,7 +4,7 @@ pkgs: {
   colorschemes.tokyonight = {
     enable = true;
     settings = {
-      style = "day";
+      style = "storm";
     };
   };
   clipboard.providers.xclip.enable = true;
@@ -44,6 +44,8 @@ pkgs: {
   ];
 
   plugins = {
+    web-devicons.enable = true;
+
     treesitter.enable = true;
 
     twilight.enable = true;
@@ -57,14 +59,14 @@ pkgs: {
     lsp = {
       enable = true;
       servers = {
-        nil-ls.enable = true; # Nix
+        nil_ls.enable = true; # Nix
         gopls.enable = true; # Go
-        golangci-lint-ls.enable = true; # Golanci-lint
-        rust-analyzer.enable = true; # Rust
+        golangci_lint_ls.enable = true; # Golanci-lint
+        rust_analyzer.enable = true; # Rust
         pylsp.enable = true; # Python
         omnisharp.enable = true; # .NET
         nginx-language-server.enable = true; # Nginx
-        lua-ls.enable = true; # Lua
+        lua_ls.enable = true; # Lua
         sqls.enable = true; # SQL
         eslint.enable = true; # HTML, CSS, JSON
         tailwindcss.enable = true; # Tailwindcss
@@ -74,6 +76,11 @@ pkgs: {
         cmake.enable = true; # CMake
         dockerls.enable = true; # Dockerfile
         elixirls.enable = true; # Elixir
+        terraformls.enable = true; # Terraform
+        intelephense = { # PHP
+          enable = true;
+          package = pkgs.intelephense;
+        };
       };
       postConfig = ''
         local _border = "rounded"
@@ -127,19 +134,10 @@ pkgs: {
           expand =
             "function(args) require('luasnip').lsp_expand(args.body) end";
         };
-        sources = {
-          __raw = ''
-            cmp.config.sources({
-              { name = 'nvim_lsp' },
-              { name = 'vsnip' },
-              -- { name = 'luasnip' },
-              -- { name = 'ultisnips' },
-              -- { name = 'snippy' },
-            }, {
-              { name = 'buffer' },
-            })
-          '';
-        };
+        sources = [
+          { name = "nvim_lsp"; }
+          { name = "vsnip"; }
+        ];
         window = {
           completion = { __raw = "cmp.config.window.bordered()"; };
           documentation = { __raw = "cmp.config.window.bordered()"; };
