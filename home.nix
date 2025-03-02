@@ -81,6 +81,7 @@ in {
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    gcc
     rustup
     trash-cli
     spotify
