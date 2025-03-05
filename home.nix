@@ -24,7 +24,7 @@ in {
   programs.btop.enable = true;
 
   programs.tmux = import ./tmux pkgs;
-
+  programs.newsboat = import ./newsboat;
   programs.starship = import ./starship { lib = pkgs.lib; };
   programs.zoxide.enable = true;
   programs.ripgrep.enable = true;
