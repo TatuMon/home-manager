@@ -28,15 +28,10 @@ in {
   programs.starship = import ./starship { lib = pkgs.lib; };
   programs.zoxide.enable = true;
   programs.ripgrep.enable = true;
-  programs.direnv.enable = true;
 
   programs.bash = {
     enable = true;
     bashrcExtra = ''
-      eval "$(starship init bash)"
-      eval "$(zoxide init bash)"
-      eval "$(direnv hook bash)"
-
       tmux a || tmux
     '';
   };
