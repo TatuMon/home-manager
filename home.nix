@@ -31,6 +31,9 @@ in {
 
   programs.bash = {
     enable = true;
+    profileExtra = ''
+      export XDG_DATA_DIRS=$HOME/.nix-profile/share:$HOME/.share:"${"\${XDG_DATA_DIRS:-/usr/local/share/:/usr/share/}"}"
+    '';
     bashrcExtra = ''
       tmux a || tmux
     '';
@@ -44,6 +47,15 @@ in {
       init.defaultBranch = "main";
       core.editor = "nvim";
       alias.stashall = "stash --include-untracked";
+    };
+  };
+
+  programs.thunderbird = {
+    enable = true;
+    profiles = {
+      default = {
+        isDefault = true;
+      };
     };
   };
 
