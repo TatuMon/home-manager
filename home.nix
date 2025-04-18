@@ -38,7 +38,7 @@ in {
   programs.bash = {
     enable = true;
     profileExtra = ''
-      export XDG_DATA_DIRS=$HOME/.nix-profile/share:$HOME/.share:"${"\${XDG_DATA_DIRS:-/usr/local/share/:/usr/share/}"}"
+      export XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"
     '';
     bashrcExtra = ''
       if [ -z "$SSH_AUTH_SOCK" ]; then
