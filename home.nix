@@ -1,3 +1,9 @@
+################
+# KNOWN ISSUES #
+################
+# When using KDE Plasma, if the app launcher is not detecting the installed packages, run this:
+# `plasmashell --replace &`
+
 # Minimun nixpkgs version: 24.11
 { pkgs, config, ... }:
 
