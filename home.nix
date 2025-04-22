@@ -2,7 +2,9 @@
 # KNOWN ISSUES #
 ################
 # When using KDE Plasma and systemd, if the app launcher is not detecting the installed packages,
-# run this: `systemctl restart --user plasma-plasmashell`
+# run one of these:
+#   - `systemctl restart --user plasma-plasmashell`
+#   - `kbuildsycoca6 --noincremental`
 
 # Minimun nixpkgs version: 24.11
 { pkgs, config, ... }:
@@ -13,6 +15,10 @@ let
     ref = "nixos-24.11";
   });
 in {
+  xdg = {
+    enable = true;
+  };
+
   nixGL.packages = import <nixgl> { inherit pkgs; };
 
   nixpkgs.config = {
@@ -37,9 +43,6 @@ in {
 
   programs.bash = {
     enable = true;
-    profileExtra = ''
-      export XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"
-    '';
     bashrcExtra = ''
       if [ -z "$SSH_AUTH_SOCK" ]; then
         # Use fixed socket location
