@@ -56,17 +56,14 @@ pkgs: {
 
     transparent.enable = true;
 
+    rustaceanvim.enable = true;
+
     lsp = {
       enable = true;
       servers = {
         nil_ls.enable = true; # Nix
         gopls.enable = true; # Go
         golangci_lint_ls.enable = true; # Golanci-lint
-        rust_analyzer = { # Rust
-          enable = true;
-          installCargo = false;
-          installRustc = false;
-        };
         pylsp.enable = true; # Python
         omnisharp.enable = true; # .NET
         nginx_language_server.enable = true; # Nginx
