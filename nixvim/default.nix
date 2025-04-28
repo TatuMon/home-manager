@@ -3,9 +3,7 @@ pkgs: {
   enable = true;
   colorschemes.tokyonight = {
     enable = true;
-    settings = {
-      style = "storm";
-    };
+    settings = { style = "storm"; };
   };
   clipboard.providers.xclip.enable = true;
 
@@ -32,7 +30,7 @@ pkgs: {
 
   userCommands = import ./userCommands;
 
-  extraPlugins = with pkgs.vimPlugins;[
+  extraPlugins = with pkgs.vimPlugins; [
     {
       plugin = outline-nvim;
       config = "lua require('outline').setup({})";
@@ -56,14 +54,21 @@ pkgs: {
 
     transparent.enable = true;
 
-    rustaceanvim.enable = true;
-
     lsp = {
       enable = true;
       servers = {
         nil_ls.enable = true; # Nix
+        intelephense = { # PHP
+          enable = true;
+          package = pkgs.intelephense;
+        };
         gopls.enable = true; # Go
-        golangci_lint_ls.enable = true; # Golanci-lint
+        # golangci-lint-ls.enable = true; # Golanci-lint
+        rust_analyzer = { # Rust
+          enable = true;
+          installCargo = false;
+          installRustc = false;
+        };
         pylsp.enable = true; # Python
         omnisharp.enable = true; # .NET
         nginx_language_server.enable = true; # Nginx
@@ -78,10 +83,7 @@ pkgs: {
         dockerls.enable = true; # Dockerfile
         elixirls.enable = true; # Elixir
         terraformls.enable = true; # Terraform
-        intelephense = { # PHP
-          enable = true;
-          package = pkgs.intelephense;
-        };
+        lemminx.enable = true; # XML
       };
       postConfig = ''
         local _border = "rounded"
@@ -117,6 +119,8 @@ pkgs: {
 
     lint.enable = true;
 
+    luasnip.enable = true;
+
     cmp = {
       enable = true;
       settings = {
@@ -131,9 +135,15 @@ pkgs: {
             })
           '';
         };
+        snippet = {
+          expand =
+            "function(args) require('luasnip').lsp_expand(args.body) end";
+        };
         sources = [
           { name = "nvim_lsp"; }
           { name = "vsnip"; }
+          { name = "luasnip"; }
+          { name = "buffer"; }
         ];
         window = {
           completion = { __raw = "cmp.config.window.bordered()"; };
@@ -152,7 +162,15 @@ pkgs: {
 
     nvim-autopairs = { enable = true; };
 
-    neo-tree = { enable = true; };
+    neo-tree = {
+      enable = true;
+      buffers = {
+        followCurrentFile = {
+          enabled = true;
+          leaveDirsOpen = true;
+        };
+      };
+    };
 
     telescope = { enable = true; };
 
@@ -160,8 +178,10 @@ pkgs: {
 
     dashboard = { enable = true; };
 
-    gitblame.enable = true;
-    gitsigns.enable = true;
+    gitsigns = {
+      enable = true;
+      settings.current_line_blame = true;
+    };
 
     lazygit = { enable = true; };
 
