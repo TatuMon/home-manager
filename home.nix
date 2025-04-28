@@ -44,15 +44,6 @@ in {
   programs.bash = {
     enable = true;
     bashrcExtra = ''
-      if [ -z "$SSH_AUTH_SOCK" ]; then
-        # Use fixed socket location
-        export SSH_AUTH_SOCK=~/.ssh/ssh-agent.sock
-        # Start only if not running
-        if ! pgrep ssh-agent >/dev/null; then
-          eval "$(ssh-agent -a "$SSH_AUTH_SOCK")" >/dev/null
-        fi
-      fi
-
       tmux a || tmux
     '';
   };
