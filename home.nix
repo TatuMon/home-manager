@@ -14,6 +14,8 @@ let
     url = "https://github.com/nix-community/nixvim";
     ref = "nixos-24.11";
   });
+
+  wallpapers = import ./wallpapers { pkgs = pkgs; };
 in {
   xdg = {
     enable = true;
@@ -112,6 +114,8 @@ in {
     # FONTS
     nerd-fonts.gohufont
     nerd-fonts.jetbrains-mono
+
+    wallpapers
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -128,6 +132,7 @@ in {
     #   org.gradle.daemon.idletimeout=3600000
     # '';
 
+    "Pictures/Wallpapers".source = "${wallpapers}/wallpapers";
     ".todo/config".text = import ./todotxt/dotfile.nix;
     ".config/hypr/hyprland.conf".source = ./hyprland/hyprland.conf;
     ".config/waybar/config.jsonc".source = ./waybar/config.jsonc;
