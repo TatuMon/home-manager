@@ -135,6 +135,7 @@ in {
     "Pictures/Wallpapers".source = "${wallpapers}/wallpapers";
     ".todo/config".text = import ./todotxt/dotfile.nix;
     ".config/hypr/hyprland.conf".source = ./hyprland/hyprland.conf;
+    ".config/hypr/hyprpaper.conf".source = ./hyprland/hyprpaper.conf;
     ".config/waybar/config.jsonc".source = ./waybar/config.jsonc;
     ".config/waybar/style.css".source = ./waybar/style.css;
   };
