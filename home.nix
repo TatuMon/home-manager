@@ -136,6 +136,7 @@ in {
     ".todo/config".text = import ./todotxt/dotfile.nix;
     ".config/hypr/hyprland.conf".source = ./hyprland/hyprland.conf;
     ".config/hypr/hyprpaper.conf".source = ./hyprland/hyprpaper.conf;
+    ".config/hypr/hyprlock.conf".source = ./hyprland/hyprlock.conf;
     ".config/waybar/config.jsonc".source = ./waybar/config.jsonc;
     ".config/waybar/style.css".source = ./waybar/style.css;
   };
