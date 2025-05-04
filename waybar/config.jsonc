@@ -18,7 +18,8 @@
         "custom/zypper",
         "clock",
         "custom/notification",
-        "network"
+        "network",
+        "group/power"
     ],
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -180,5 +181,40 @@
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
+    },
+    "custom/power-expand": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/lock": {
+        "format": " Lock",
+        "on-click": "hyprlock"
+    },
+    "custom/sleep": {
+        "format": "󰤄 Sleep",
+        "on-click": "systemctl hybrid-sleep"
+    },
+    "custom/shutdown": {
+        "format": " Shutdown",
+        "on-click": "systemctl poweroff"
+    },
+    "custom/reboot": {
+        "format": " Reboot",
+        "on-click":  "systemctl reboot"
+    },
+    "group/power": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "power-options",
+            "click-to-reveal": true,
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/power-expand",
+            "custom/lock",
+            "custom/shutdown",
+            "custom/reboot"
+        ]
     }
 }
