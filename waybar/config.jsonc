@@ -196,6 +196,10 @@
         "format": "",
         "tooltip": false
     },
+    "custom/logout": {
+        "format": "󰩈 Logout",
+        "on-click": "hyprctl dispatch exit"
+    },
     "custom/lock": {
         "format": " Lock",
         "on-click": "hyprlock"
@@ -222,6 +226,7 @@
         },
         "modules": [
             "custom/power-expand",
+            "custom/logout",
             "custom/lock",
             "custom/shutdown",
             "custom/reboot"
