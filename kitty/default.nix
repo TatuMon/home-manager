@@ -1,6 +1,6 @@
 { pkgs, config } : {
   enable = true;
-  font = { name = "GohuFont uni14 Nerd Font Mono"; };
+  font = { name = "JetBrainsMono Nerd Font"; };
   settings = {
     background_opacity = "0.9";
     font_size = "14";
