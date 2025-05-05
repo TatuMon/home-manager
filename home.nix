@@ -114,6 +114,8 @@ in {
     nerd-fonts.jetbrains-mono
 
     wallpapers
+
+    hyprsunset
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
