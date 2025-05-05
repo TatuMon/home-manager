@@ -108,7 +108,6 @@ in {
     elixir_1_18
     fastfetch
 
-    flameshot
     (config.lib.nixGL.wrap brave)
 
     # FONTS
