@@ -118,6 +118,8 @@ in {
     hyprsunset
     hypridle
     hyprsysteminfo
+    hyprpicker # hyprshot dependency
+    hyprshot
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
