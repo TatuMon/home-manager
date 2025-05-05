@@ -136,7 +136,6 @@ in {
     ".todo/config".text = import ./todotxt/dotfile.nix;
     ".config/hypr".source = ./hyprland;
     ".config/waybar".source = ./waybar;
-    ".config/mako/config".source = ./mako/config;
   };
 
   # Home Manager can also manage your environment variables through
