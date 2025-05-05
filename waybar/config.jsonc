@@ -20,6 +20,7 @@
         "clock",
         "custom/notification",
         "network",
+        "custom/hyprsunset",
         "group/power"
     ],
     "hyprland/workspaces": {
@@ -37,6 +38,14 @@
         "icon": true,
         "max-length": 80,
         "tooltip": false
+    },
+    "custom/hyprsunset": {
+        "format": " ",
+        "tooltip": true,
+        "tooltip-format": "Toggle dark light",
+        "on-click": "$HOME/.config/waybar/scripts/hyprsunset_toggle.sh",
+        "on-scroll-up": "hyprctl hyprsunset temperature -250 >/dev/null",
+        "on-scroll-down": "hyprctl hyprsunset temperature +250 >/dev/null"
     },
     "custom/zypper": {
         "format": " {}",

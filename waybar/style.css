@@ -63,6 +63,7 @@ window#waybar.solo {
 #temperature,
 #pulseaudio,
 #custom-layout,
+#custom-hyprsunset,
 #backlight {
     padding: 0px 5px;
     transition: all .3s ease;
