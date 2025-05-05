@@ -8,6 +8,7 @@
     "spacing": 10,
     "modules-left": [
         "hyprland/workspaces",
+        "custom/separator",
         "tray"
     ],
     "modules-center": [
@@ -216,5 +217,9 @@
             "custom/shutdown",
             "custom/reboot"
         ]
+    },
+    "custom/separator": {
+        "format": " | ",
+        "tooltip": false
     }
 }
