@@ -105,7 +105,6 @@ in {
     spotify
     tldr
     ranger
-    elixir_1_18
     fastfetch
 
     (config.lib.nixGL.wrap brave)
