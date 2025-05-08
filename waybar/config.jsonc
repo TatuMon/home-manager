@@ -9,13 +9,13 @@
     "modules-left": [
         "hyprland/workspaces",
         "tray",
-        "clock"
+        "clock",
+        "pulseaudio"
     ],
     "modules-center": [
         "hyprland/window"
     ],
     "modules-right": [
-        "pulseaudio",
         "custom/zypper",
         "custom/notification",
         "network",
@@ -157,10 +157,10 @@
         "on-click-right": "exec alacritty -e sh -c 'bluetoothctl'"
     },
     "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-alt": "{volume} {icon}",
+        "format": "{icon} {volume:3}%",
+        "format-alt": "{volume:3} {icon}",
         "format-alt-click": "click-middle",
-        "format-muted": "  0%",
+        "format-muted": "{icon} {volume:3}%",
         "format-icons": {
             "headphones": "",
             "handsfree": "",
@@ -168,7 +168,8 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [" ", " ", " "],
+            "default-muted": [" "]
         },
         "scroll-step": 5,
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
