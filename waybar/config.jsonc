@@ -9,6 +9,7 @@
     "modules-left": [
         "hyprland/workspaces",
         "tray",
+        "custom/weather",
         "clock",
         "pulseaudio"
     ],
@@ -230,5 +231,12 @@
             "custom/shutdown",
             "custom/reboot"
         ]
+    },
+    "custom/weather": {
+        "format": "{}°",
+        "tooltip": true,
+        "interval": 60,
+        "exec": "$HOME/.config/waybar/scripts/wttrbar_arg.sh",
+        "return-type": "json"
     }
 }

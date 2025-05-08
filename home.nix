@@ -120,6 +120,7 @@ in {
     hyprsysteminfo
     hyprpicker # hyprshot dependency
     hyprshot
+    wttrbar # Weather
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

@@ -105,6 +105,12 @@ window#waybar.hidden {
     padding: 0px 12px;
 }
 
+#custom-weather{
+    margin: 6px 0px 0px 12px;
+    background-color: #3C3836;
+    padding: 0px 12px;
+}
+
 #group-power{
     padding: 0px 10px;
     transition: all .3s ease;
