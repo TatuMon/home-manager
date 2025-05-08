@@ -1,6 +1,6 @@
 # <center>🏠 Home Manager</center>
 
-![preview](home-manager.jpeg "Preview")
+![preview](https://raw.githubusercontent.com/TatuMon/home-manager/refs/heads/main/home-manager.jpeg "Preview")
 
 # Requirements
 - [Nix (the package manager)](https://nixos.org/learn/)
