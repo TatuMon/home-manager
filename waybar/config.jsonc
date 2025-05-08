@@ -8,7 +8,8 @@
     "spacing": 10,
     "modules-left": [
         "hyprland/workspaces",
-        "tray"
+        "tray",
+        "clock"
     ],
     "modules-center": [
         "hyprland/window"
@@ -16,7 +17,6 @@
     "modules-right": [
         "pulseaudio",
         "custom/zypper",
-        "clock",
         "custom/notification",
         "network",
         "custom/hyprsunset",
@@ -160,7 +160,7 @@
         "format": "{icon} {volume}%",
         "format-alt": "{volume} {icon}",
         "format-alt-click": "click-middle",
-        "format-muted": "",
+        "format-muted": "  0%",
         "format-icons": {
             "headphones": "",
             "handsfree": "",
