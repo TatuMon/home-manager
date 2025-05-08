@@ -1,4 +1,4 @@
-# <center>🏠 Home Manager</center>
+# <h1 align="center">🏠 Home Manager</h1>
 
 ![preview](https://raw.githubusercontent.com/TatuMon/home-manager/refs/heads/main/home-manager.jpeg "Preview")
 
