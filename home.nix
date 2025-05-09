@@ -122,7 +122,6 @@ in {
     hyprpicker # hyprshot dependency
     wttrbar # Weather
     hyprshot
-    hyprlock
     wlogout
   ];
 
