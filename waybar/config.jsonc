@@ -19,16 +19,16 @@
         "pulseaudio",
         "clock",
         "network",
-        "group/power"
+        "custom/power-menu"
     ],
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "format": "{icon}",
         "format-icons": {
-            "urgent": " ",
-            "active": " ",
-            "default": " "
+            "urgent": "",
+            "active": "",
+            "default": ""
         }
     },
     "hyprland/window": {
@@ -38,7 +38,7 @@
         "tooltip": false
     },
     "custom/hyprsunset": {
-        "format": " ",
+        "format": "",
         "tooltip": true,
         "tooltip-format": "Toggle dark light",
         "on-click": "$HOME/.config/waybar/scripts/hyprsunset_toggle.sh",
@@ -125,8 +125,8 @@
     },
     "network": {
         "interval": 1,
-        "format": "󰲝 ",
-        "format-wifi": "  {essid}",
+        "format": "󰲝",
+        "format-wifi": "{essid}",
         "format-ethernet": "󰈀",
         "format-linked": "",
         "format-disconnected": "󰱟",
@@ -166,8 +166,8 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": [" ", " ", " "],
-            "default-muted": [" "]
+            "default": ["", "", ""],
+            "default-muted": [""]
         },
         "scroll-step": 5,
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
@@ -190,45 +190,12 @@
         "on-click-right": "swaync-client -d -sw",
         "escape": true
     },
-    "custom/power-expand": {
+    "custom/power-menu": {
         "format": "",
-        "tooltip": false
-    },
-    "custom/logout": {
-        "format": "󰩈 Logout",
-        "on-click": "hyprctl dispatch exit"
-    },
-    "custom/lock": {
-        "format": " Lock",
-        "on-click": "hyprlock"
-    },
-    "custom/sleep": {
-        "format": "󰤄 Sleep",
-        "on-click": "systemctl hybrid-sleep"
-    },
-    "custom/shutdown": {
-        "format": " Shutdown",
-        "on-click": "systemctl poweroff"
-    },
-    "custom/reboot": {
-        "format": " Reboot",
-        "on-click":  "systemctl reboot"
-    },
-    "group/power": {
-        "orientation": "horizontal",
-        "drawer": {
-            "transition-duration": 500,
-            "children-class": "power-options",
-            "click-to-reveal": true,
-            "transition-left-to-right": false
-        },
-        "modules": [
-            "custom/power-expand",
-            "custom/logout",
-            "custom/lock",
-            "custom/shutdown",
-            "custom/reboot"
-        ]
+        "justify": "center",
+        "tooltip": true,
+        "tooltip-format": "Open power menu",
+        "on-click": "wlogout"
     },
     "group/misc": {
         "orientation": "horizontal",

@@ -1,7 +1,7 @@
 * {
     border: none;
     border-radius: 8;
-    font-family:   "JetBrainsMono Nerd Font", "FontAwesome 6 Free";
+    font-family:   "FiraCode Nerd Font Propo"; /* Propo fonts are need for icons to show properly */
     font-size:     16px;
     min-height: 20px;
 }
@@ -112,21 +112,9 @@ window#waybar.hidden {
     color: rgba(115, 186, 37, 1);
 }
 
-#power{
+#custom-power-menu{
     margin: 6px 12px 0px 0px;
     padding: 0px 12px;
     transition: all .3s ease;
     background-color: #CC241D;
-}
-
-#custom-power-expand{
-    margin: 0px 12px;
-}
-
-#custom-logout,
-#custom-lock,
-#custom-shutdown,
-#custom-sleep,
-#custom-reboot {
-    margin: 0px 12px;
 }

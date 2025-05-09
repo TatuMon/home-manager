@@ -112,6 +112,7 @@ in {
     # FONTS
     nerd-fonts.gohufont
     nerd-fonts.jetbrains-mono
+    nerd-fonts.fira-code
 
     wallpapers
 
@@ -119,8 +120,10 @@ in {
     hypridle
     hyprsysteminfo
     hyprpicker # hyprshot dependency
-    hyprshot
     wttrbar # Weather
+    hyprshot
+    hyprlock
+    wlogout
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -141,6 +144,7 @@ in {
     ".todo/config".text = import ./todotxt/dotfile.nix;
     ".config/hypr".source = ./hyprland;
     ".config/waybar".source = ./waybar;
+    ".config/wlogout".source = ./wlogout;
   };
 
   # Home Manager can also manage your environment variables through
