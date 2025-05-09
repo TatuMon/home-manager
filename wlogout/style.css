@@ -13,7 +13,7 @@ window {
 	font-size: 16pt;
     background-image: image(url("noise.png"));
     background-size: cover;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 button {
@@ -36,9 +36,7 @@ button:focus {
 button:hover {
 	opacity: 0.8;
     background-color: #D79921;
-    background-size: 50%;
-    margin: 30px;
-    border-radius: 80px;
+    background-size: 22%;
     border: none;
     box-shadow: 0 0 50px @shadow;
 }
