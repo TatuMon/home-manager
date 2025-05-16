@@ -25,8 +25,13 @@
     ]
   },
   "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "special": ""
+    },
     "disable-scroll": true,
-    "all-outputs": true
+    "all-outputs": true,
+    "show-special": true
   },
   "hyprland/window": {
     "max-length": 128
