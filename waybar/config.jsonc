@@ -32,6 +32,7 @@
     "max-length": 128
   },
   "clock": {
+    "timezone": "America/Argentina/Buenos_Aires",
     "format": "{:%d/%m/%Y %R}",
     "tooltip-format": "<span color='#35b9ab'><tt><small>{calendar}</small></tt></span>",
     "calendar": {
@@ -59,13 +60,9 @@
   },
   "pulseaudio": {
     "format": "{icon} {volume:3}%",
-    "format-alt": "{volume:3} {icon}",
-    "format-alt-click": "click-middle",
     "format-muted": "{icon} {volume:3}%",
     "format-icons": {
         "headphones": "",
-        "handsfree": "",
-        "headset": "",
         "phone": "",
         "portable": "",
         "car": "",
