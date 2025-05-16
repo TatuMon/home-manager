@@ -32,7 +32,8 @@ window#waybar {
     background-image: linear-gradient(0deg, @selection, @background-darker);
 }
 #clock {
-    margin: 0 4px;
+    padding: 0px 4px;
+    margin: 0px 6px 0px 0px;
     background: @background;
 }
 #custom-weather,
