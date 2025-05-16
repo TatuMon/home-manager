@@ -1,5 +1,11 @@
 [
   {
+    action = "<cmd>lua vim.lsp.buf.code_action()<cr>";
+    key = "<leader>la";
+    mode = "n";
+    options.desc = "List code actions";
+  }
+  {
     action = "<cmd>lua vim.lsp.buf.definition()<cr>";
     key = "gd";
     mode = "n";

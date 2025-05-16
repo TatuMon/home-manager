@@ -78,7 +78,7 @@ pkgs: {
         tailwindcss.enable = true; # Tailwindcss
         yamlls.enable = true; # YAML
         bashls.enable = true; # Bash
-        ccls.enable = true; # C/C++/Obj.C
+        clangd.enable = true; # C/C++
         cmake.enable = true; # CMake
         dockerls.enable = true; # Dockerfile
         elixirls.enable = true; # Elixir
@@ -87,6 +87,8 @@ pkgs: {
       };
       postConfig = ''
         local _border = "rounded"
+
+        vim.o.winborder = _border
 
         vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
           vim.lsp.handlers.hover, {
