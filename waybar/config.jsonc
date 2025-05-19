@@ -65,8 +65,8 @@
   },
   "pulseaudio": {
     "max-volume": 100,
-    "format": "{icon} {volume:3}%",
-    "format-muted": "{icon} {volume:3}%",
+    "format": "{icon}  {volume:3}%",
+    "format-muted": "{icon}  {volume:3}%",
     "format-icons": {
         "headphones": "",
         "phone": "",
