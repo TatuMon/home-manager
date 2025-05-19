@@ -15,6 +15,7 @@ let
     ref = "nixos-24.11";
   });
 
+  sshy = import ./sshy { pkgs = pkgs; };
   wallpapers = import ./wallpapers { pkgs = pkgs; };
   rofi-themes = import ./rofi/rofi-themes.nix { pkgs = pkgs; };
 in {
@@ -115,6 +116,7 @@ in {
     nerd-fonts.fira-code
 
     wallpapers
+    sshy
 
     # Hyprland
     hyprsunset # Dark light
