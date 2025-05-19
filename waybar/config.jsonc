@@ -15,7 +15,8 @@
     "tray",
     "pulseaudio",
     "custom/weather",
-    "clock"
+    "clock",
+    "custom/wlogout"
   ],
   "wlr/taskbar": {
     "on-click": "activate",
@@ -87,7 +88,7 @@
     "format": "{icon}",
     "format-icons": {
       "notification": "",
-      "none": "",
+      "none": "",
       "dnd-notification": "",
       "dnd-none": ""
     },
@@ -97,5 +98,11 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
+  },
+  "custom/wlogout": {
+    "tooltip": false,
+    "format": "󰤆",
+    "justify": "center",
+    "on-click": "wlogout"
   }
 }

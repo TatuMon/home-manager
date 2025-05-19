@@ -3,7 +3,7 @@
     border: none;
     border-radius: 0;
     font-family: "Iosevka Nerd Font Propo";
-    font-size: 12pt;
+    font-size: 16px;
     min-height: 0;
 }
 window#waybar {
@@ -35,9 +35,13 @@ tooltip {
 #taskbar button.active {
     background-image: linear-gradient(0deg, @selection, @background-darker);
 }
+#custom-wlogout {
+    min-width: 40px;
+    background: #003334;
+    font-size: 1.2rem;
+}
 #clock {
     padding: 0px 4px;
-    margin: 0px 6px 0px 0px;
     background: @background;
 }
 #custom-weather,
