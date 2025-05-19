@@ -16,6 +16,7 @@ let
   });
 
   wallpapers = import ./wallpapers { pkgs = pkgs; };
+  rofi-themes = import ./rofi/rofi-themes.nix { pkgs = pkgs; };
 in {
   xdg = {
     enable = true;
@@ -110,19 +111,26 @@ in {
     (config.lib.nixGL.wrap brave)
 
     # FONTS
-    nerd-fonts.gohufont
     nerd-fonts.jetbrains-mono
     nerd-fonts.fira-code
 
     wallpapers
 
-    hyprsunset
-    hypridle
-    hyprsysteminfo
+    # Hyprland
+    hyprsunset # Dark light
+    hypridle # Idle management
+    hyprsysteminfo # System info
+    hyprshot # Screenshots
     hyprpicker # hyprshot dependency
+
+    # Waybar
+    waybar
     wttrbar # Weather
-    hyprshot
-    wlogout
+
+    wlogout # Power menu
+
+    rofi # menu
+    rofi-themes # rofi themes
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -144,6 +152,7 @@ in {
     ".config/hypr".source = ./hyprland;
     ".config/waybar".source = ./waybar;
     ".config/wlogout".source = ./wlogout;
+    ".config/rofi/config.rasi".source = ./rofi/config.rasi;
   };
 
   # Home Manager can also manage your environment variables through
