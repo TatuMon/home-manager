@@ -64,6 +64,7 @@
     "return-type": "json"
   },
   "pulseaudio": {
+    "max-volume": 100,
     "format": "{icon} {volume:3}%",
     "format-muted": "{icon} {volume:3}%",
     "format-icons": {
@@ -75,7 +76,9 @@
         "default-muted": [""]
     },
     "scroll-step": 5,
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click": "$HOME/.config/waybar/scripts/pulseaudio_controls.sh mute",
+    "on-scroll-up": "$HOME/.config/waybar/scripts/pulseaudio_controls.sh up",
+    "on-scroll-down": "$HOME/.config/waybar/scripts/pulseaudio_controls.sh down",
     "on-click-right": "pavucontrol",
     "tooltip": true
   },
