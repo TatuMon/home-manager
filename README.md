@@ -26,3 +26,14 @@ NixGL solves the issue where packages installed using Nix can't access
 OpenGL drivers.
 
 This doesn't happen in NixOS.
+
+### Extra software
+Like what happens with Hyprland, some software needs access to system files,
+so installing them with home-manager is not possible.
+
+Here is the list of the packages that you need to install by yourself:
+- [swaync](https://github.com/ErikReider/SwayNotificationCenter) (notifications)
+- [hyprpaper](https://github.com/hyprwm/hyprpaper) (wallpapers)
+- [pcloud](https://www.pcloud.com) (this is the cloud service I use. it's not necessary)
+- [discord](https://discord.com) (I prefer to install this manually, so I can get the last update)
+- [wl-clipboard](https://github.com/bugaevc/wl-clipboard) (I prefer to have this system-wide)
