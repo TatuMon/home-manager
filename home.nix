@@ -114,6 +114,7 @@ in {
     # FONTS
     nerd-fonts.jetbrains-mono
     nerd-fonts.fira-code
+    nerd-fonts.iosevka
 
     wallpapers
     sshy

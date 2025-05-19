@@ -1,6 +1,6 @@
 { pkgs, config } : {
   enable = true;
-  font = { name = "JetBrainsMono Nerd Font"; };
+  font = { name = "JetBrainsMono Nerd Font Propo"; };
   settings = {
     background_opacity = "0.9";
     font_size = "14";

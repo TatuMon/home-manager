@@ -5,7 +5,7 @@
   settings = {
     format = lib.concatStrings [
       "[░▒▓](#a3aed2)"
-      "[ 👽 ](bg:#a3aed2 fg:#090c0c)"
+      "[ 󰣇 ](bg:#a3aed2 fg:#090c0c)"
       "$nix_shell"
       "[](bg:#769ff0 fg:#a3aed2)"
       "$directory"
