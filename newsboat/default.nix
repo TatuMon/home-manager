@@ -4,8 +4,7 @@
     {
       title = "Ámbito Financiero";
       tags = [ "argentina" "ámbito" "economía" ];
-      url = "https://www.ambito.com/rss/pages/home.xml";
-    }
+      url = "https://www.ambito.com/rss/pages/home.xml"; }
     {
       title = "Clarín";
       tags = [ "argentina" "clarin" ];
@@ -30,6 +29,11 @@
       title = "HackerNews";
       tags = [ "tech" ];
       url = "https://news.ycombinator.com/rss";
+    }
+    {
+      title = "Arch Linux News";
+      tags = [ "tech" "linux" "arch" ];
+      url = "https://archlinux.org/feeds/news/";
     }
   ];
 }
