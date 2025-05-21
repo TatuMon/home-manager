@@ -107,6 +107,7 @@ in {
     tldr
     ranger
     fastfetch
+    gimp
 
     (config.lib.nixGL.wrap brave)
 
