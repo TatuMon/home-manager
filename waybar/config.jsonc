@@ -78,8 +78,6 @@
     },
     "scroll-step": 5,
     "on-click": "$HOME/.config/waybar/scripts/pulseaudio_controls.sh mute",
-    "on-scroll-up": "$HOME/.config/waybar/scripts/pulseaudio_controls.sh up",
-    "on-scroll-down": "$HOME/.config/waybar/scripts/pulseaudio_controls.sh down",
     "on-click-right": "pavucontrol",
     "tooltip": true
   },
