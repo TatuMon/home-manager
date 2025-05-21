@@ -1,6 +1,7 @@
 # <h1 align="center">🏠 Home Manager</h1>
 
-![preview](https://raw.githubusercontent.com/TatuMon/home-manager/refs/heads/main/home-manager.jpeg "Preview")
+![preview](https://raw.githubusercontent.com/TatuMon/home-manager/refs/heads/main/screen.jpeg "Preview")
+![preview2](https://raw.githubusercontent.com/TatuMon/home-manager/refs/heads/main/screen2.jpg "Preview2")
 
 # Requirements
 - [Nix (the package manager)](https://nixos.org/learn/)
