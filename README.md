@@ -35,7 +35,5 @@ Here is the list of the packages that you need to install by yourself:
 - [swaync](https://github.com/ErikReider/SwayNotificationCenter) (notifications)
 - [hyprpaper](https://github.com/hyprwm/hyprpaper) (wallpapers)
 - [hyprlock](https://github.com/hyprwm/hyprlock) (lock screen)
-- [pcloud](https://www.pcloud.com) (this is the cloud service I use. it's not necessary)
-- [discord](https://discord.com) (I prefer to install this manually, so I can get the last update)
 - [wl-clipboard](https://github.com/bugaevc/wl-clipboard) (I prefer to have this system-wide)
 - [openssh](https://wiki.archlinux.org/title/OpenSSH) (Needed for sshy)

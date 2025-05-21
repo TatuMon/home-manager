@@ -104,7 +104,6 @@ in {
     gcc
     rustup
     trash-cli
-    spotify
     tldr
     ranger
     fastfetch
@@ -134,6 +133,11 @@ in {
 
     rofi # menu
     rofi-themes # rofi themes
+
+    # UNFREE SOFTWARE
+    spotify
+    discord
+    pcloud
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
