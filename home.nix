@@ -91,24 +91,32 @@ in {
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    # UNFREE SOFTWARE
-    spotify
-    discord
-    pcloud
-
-    # Software
+    #################
+    ###  SOFTWARE ###
+    #################
     trash-cli
     tldr
     ranger
     fastfetch
     gimp
-
-    # Programming stuff
-    asdf-vm # Extendable version manager
-
     (config.lib.nixGL.wrap brave)
 
-    # FONTS
+    #######################
+    ### UNFREE SOFTWARE ###
+    #######################
+    spotify
+    discord
+    pcloud
+
+    #########################
+    ### PROGRAMMING STUFF ###
+    #########################
+    asdf-vm # Extendable version manager
+
+
+    #############
+    ### FONTS ###
+    #############
     nerd-fonts.jetbrains-mono
     nerd-fonts.fira-code
     nerd-fonts.iosevka
@@ -116,21 +124,32 @@ in {
     wallpapers
     sshy
 
-    # Hyprland
+    #! ATTENTION !#
+    # Comment the packages bellow this line if you're planning on using a
+    # desktop environment (e.g. GNOME, KDE, etc.)
+  
+    ################
+    ### HYPRLAND ###
+    ################
     hyprsunset # Dark light
     hypridle # Idle management
     hyprsysteminfo # System info
     hyprshot # Screenshots
     hyprpicker # hyprshot dependency
 
-    # Waybar
+    ##############
+    ### WAYBAR ###
+    ##############
     waybar
     wttrbar # Weather
 
+    #########################
+    ### DESKTOP UTILITIES ###
+    #########################
     wlogout # Power menu
-
     rofi # menu
     rofi-themes # rofi themes
+    themechanger
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
