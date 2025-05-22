@@ -91,23 +91,20 @@ in {
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
+    # UNFREE SOFTWARE
+    spotify
+    discord
+    pcloud
 
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
-    gcc
-    rustup
+    # Software
     trash-cli
     tldr
     ranger
     fastfetch
     gimp
+
+    # Programming stuff
+    asdf-vm # Extendable version manager
 
     (config.lib.nixGL.wrap brave)
 
@@ -134,11 +131,6 @@ in {
 
     rofi # menu
     rofi-themes # rofi themes
-
-    # UNFREE SOFTWARE
-    spotify
-    discord
-    pcloud
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
