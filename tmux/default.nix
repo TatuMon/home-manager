@@ -14,12 +14,15 @@ pkgs: {
       plugin = resurrect;
       extraConfig = ''
         set -g @resurrect-strategy-nvim 'session'
+        set -g @resurrect-capture-pane-contents 'off'
       '';
     }
     {
       plugin = continuum;
       extraConfig = ''
         set -g @continuum-restore 'on'
+        set -g @continuum-save-interval '0'
+        set -g @continuum-save 'off'
         set -g @continuum-boot 'on'
       '';
     }
