@@ -42,6 +42,8 @@ pkgs: {
   ];
 
   plugins = {
+    vimwiki.enable = true;
+
     web-devicons.enable = true;
 
     treesitter.enable = true;
@@ -193,14 +195,12 @@ pkgs: {
     indent-o-matic.enable = true;
     indent-blankline.enable = true;
 
+    dap-go.enable = true;
+    dap-python.enable = true;
+    dap-virtual-text.enable = true;
+    dap-ui.enable = true;
     dap = {
       enable = true;
-      extensions = {
-        dap-go.enable = true;
-        dap-python.enable = true;
-        dap-virtual-text.enable = true;
-        dap-ui.enable = true;
-      };
       signs = {
         dapBreakpoint.text = "🛑";
         dapStopped.text = "▶";
