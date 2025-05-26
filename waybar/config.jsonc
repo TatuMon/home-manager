@@ -78,7 +78,7 @@
     },
     "scroll-step": 5,
     "on-click": "$HOME/.config/waybar/scripts/pulseaudio_controls.sh mute",
-    "on-click-right": "pavucontrol",
+    "on-click-right": "sonusmix &>/dev/null",
     "tooltip": true
   },
   "custom/notification": {

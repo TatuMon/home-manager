@@ -150,6 +150,7 @@ in {
     rofi # menu
     rofi-themes # rofi themes
     themechanger
+    sonusmix
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
