@@ -146,7 +146,7 @@ configuration {
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
   drun-display-format: "{name}";
-  display-drun: "";
+  display-drun: "󰍉";
   show-icons: true;
   timeout {
       action: "kb-cancel";
