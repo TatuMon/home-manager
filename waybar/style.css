@@ -40,13 +40,14 @@ tooltip {
     background: #003334;
     font-size: 1.2rem;
 }
-#clock {
-    padding: 0px 4px;
-    background: @background;
-}
 #custom-weather,
 #pulseaudio,
 #tray,
-#custom-notification {
+#custom-notification,
+#custom-hyprsunset {
     margin: 0px 12px;
+}
+#clock {
+    padding: 0px 4px;
+    background: @background;
 }

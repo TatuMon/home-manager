@@ -15,6 +15,7 @@
     "tray",
     "pulseaudio",
     "custom/weather",
+    "custom/hyprsunset",
     "clock",
     "custom/wlogout"
   ],
@@ -102,5 +103,13 @@
     "format": "󰤆",
     "justify": "center",
     "on-click": "wlogout"
+  },
+  "custom/hyprsunset": {
+    "format": " ",
+    "tooltip": true,
+    "tooltip-format": "Toggle dark light",
+    "on-click": "$HOME/.config/waybar/scripts/hyprsunset_toggle.sh",
+    "on-scroll-up": "hyprctl hyprsunset temperature -250 >/dev/null",
+    "on-scroll-down": "hyprctl hyprsunset temperature +250 >/dev/null"
   }
 }
