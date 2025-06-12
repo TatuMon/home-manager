@@ -1,8 +1,9 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 24,
+  "height": 30,
   "spacing": 4,
+  "margin": "5px 100% 0px 100%",
   "modules-left": [
     "hyprland/workspaces",
     "wlr/taskbar"
@@ -13,10 +14,11 @@
   "modules-right": [
     "custom/notification",
     "tray",
+    "custom/hyprsunset",
     "pulseaudio",
     "custom/weather",
-    "custom/hyprsunset",
     "clock",
+    "network",
     "custom/wlogout"
   ],
   "wlr/taskbar": {
@@ -36,7 +38,7 @@
     "show-special": true
   },
   "hyprland/window": {
-    "max-length": 128
+    "max-length": 50
   },
   "clock": {
     "timezone": "America/Argentina/Buenos_Aires",
@@ -58,29 +60,51 @@
   "tray": {
     "spacing": 6
   },
-  "custom/weather": {
-    "format": "{}°",
-    "tooltip": true,
-    "interval": 60,
-    "exec": "$HOME/.config/waybar/scripts/wttrbar_arg.sh",
-    "return-type": "json"
-  },
   "pulseaudio": {
     "max-volume": 100,
-    "format": "{icon}  {volume:3}%",
-    "format-muted": "{icon}  {volume:3}%",
+    "format": "{icon} {volume:3}%",
+    "format-muted": "{icon} {volume:3}%",
     "format-icons": {
         "headphones": "",
         "phone": "",
         "portable": "",
         "car": "",
-        "default": ["", "", ""],
-        "default-muted": [""]
+        "default": ["󰕿", "󰖀", "󰕾"],
+        "default-muted": ["󰝟"]
     },
+    "justify": "center",
+    "min-length": 7,
     "scroll-step": 5,
     "on-click": "$HOME/.config/waybar/scripts/pulseaudio_controls.sh mute",
     "on-click-right": "sonusmix &>/dev/null",
     "tooltip": true
+  },
+  "network": {
+    "interval": 3,
+    "family": "ipv4",
+    "format": "",
+    "format-ethernet": "{icon}",
+    "format-disconnected": "{icon}",
+    "format-disabled": "{icon}",
+    "format-wifi": "{icon}",
+    "format-icons": {
+      "wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+      "ethernet": "󰈀",
+      "disconnected": "󰪎",
+      "disabled": ""
+    },
+    "justify": "center",
+    "min-length": 3,
+    "tooltip": true,
+    "tooltip-format": "{ifname}\t{ipaddr}/{cidr}\ngateway\t{gwaddr}\n\t{essid}\n{icon}  ⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}"
+  },
+  "custom/weather": {
+    "format": "{}°",
+    "tooltip": true,
+    "interval": 60,
+    "exec": "$HOME/.config/waybar/scripts/wttrbar_arg.sh",
+    "return-type": "json",
+    "on-click": "xdg-open https://www.smn.gob.ar"
   },
   "custom/notification": {
     "tooltip": true,
@@ -105,7 +129,7 @@
     "on-click": "wlogout"
   },
   "custom/hyprsunset": {
-    "format": " ",
+    "format": "",
     "tooltip": true,
     "tooltip-format": "Toggle dark light",
     "on-click": "$HOME/.config/waybar/scripts/hyprsunset_toggle.sh",

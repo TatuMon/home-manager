@@ -1,20 +1,20 @@
 @import url("./colors.css");
 * {
     border: none;
-    border-radius: 0;
-    font-family: "Iosevka Nerd Font Propo";
+    font-family: "FiraCode Nerd Font Propo", "JetBrainsMono Nerd Font Propo";
     font-size: 16px;
     min-height: 0;
+    border-radius: 6px;
 }
 window#waybar {
-    opacity: 0.9;
+    opacity: 0.8;
     background: @background-darker;
     color: @foreground;
     border-bottom: 2px solid @background;
 }
 tooltip {
-    border-radius: 4px;
-    border: 1px solid @foreground;
+    border-radius: 6px;
+    background: rgba(40, 42, 54, 0.9); 
 }
 #workspaces button {
     padding: 0 10px;
@@ -40,14 +40,16 @@ tooltip {
     background: #003334;
     font-size: 1.2rem;
 }
-#custom-weather,
-#pulseaudio,
 #tray,
 #custom-notification,
 #custom-hyprsunset {
     margin: 0px 12px;
 }
-#clock {
+
+#pulseaudio,
+#custom-weather,
+#clock,
+#network {
     padding: 0px 4px;
     background: @background;
 }
