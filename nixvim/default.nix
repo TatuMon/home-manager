@@ -219,4 +219,12 @@ pkgs: {
     };
     cmp-dap.enable = true;
   };
+
+  autoCmd = [
+    {
+      command = "set filetype=hyprlang";
+      event = [ "BufRead" "BufNewFile"  ];
+      pattern = [ "hyprland/*.conf" "hypr/*.conf" ];
+    }
+  ];
 }
