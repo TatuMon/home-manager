@@ -1,11 +1,11 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 30,
+  "height": 36,
   "spacing": 4,
-  "margin": "5px 100% 0px 100%",
   "modules-left": [
     "hyprland/workspaces",
+    "custom/sep",
     "wlr/taskbar"
   ],
   "modules-center": [
@@ -13,12 +13,16 @@
   ],
   "modules-right": [
     "custom/notification",
-    "tray",
     "custom/hyprsunset",
     "pulseaudio",
+    "custom/sep",
     "custom/weather",
     "clock",
+    "custom/sep",
+    "tray",
+    "custom/sep",
     "network",
+    "custom/sep",
     "custom/wlogout"
   ],
   "wlr/taskbar": {
@@ -42,7 +46,7 @@
   },
   "clock": {
     "timezone": "America/Argentina/Buenos_Aires",
-    "format": "{:%d/%m/%Y %R}",
+    "format": " {:%d/%m/%Y %R}",
     "tooltip-format": "<span color='#35b9ab'><tt><small>{calendar}</small></tt></span>",
     "calendar": {
       "mode-mon-col"      : 4,
@@ -135,5 +139,9 @@
     "on-click": "$HOME/.config/waybar/scripts/hyprsunset_toggle.sh",
     "on-scroll-up": "hyprctl hyprsunset temperature -250 >/dev/null",
     "on-scroll-down": "hyprctl hyprsunset temperature +250 >/dev/null"
+  },
+  "custom/sep": {
+    "format": "|",
+    "tooltip": false
   }
 }
