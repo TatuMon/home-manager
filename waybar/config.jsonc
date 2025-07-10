@@ -14,7 +14,10 @@
   "modules-right": [
     "custom/notification",
     "custom/hyprsunset",
-    "pulseaudio",
+    "custom/sep",
+    "pulseaudio#sink",
+    "custom/sep",
+    "pulseaudio#source",
     "custom/sep",
     "custom/weather",
     "clock",
@@ -64,7 +67,19 @@
   "tray": {
     "spacing": 6
   },
-  "pulseaudio": {
+  "pulseaudio#source": {
+    "max-volume": 100,
+    "format": "{format_source}",
+    "format-source": "󰍬",
+    "format-source-muted": "󰍭",
+    "justify": "center",
+    "scroll-step": 5,
+    "on-click": "$HOME/.config/waybar/scripts/pulseaudio_controls.sh mute-source",
+    "on-click-middle": "$HOME/.config/waybar/scripts/pulseaudio_controls.sh switch-source",
+    "on-click-right": "sonusmix &>/dev/null",
+    "tooltip": true
+  },
+  "pulseaudio#sink": {
     "max-volume": 100,
     "format": "{icon} {volume:3}%",
     "format-muted": "{icon} {volume:3}%",
@@ -80,6 +95,7 @@
     "min-length": 7,
     "scroll-step": 5,
     "on-click": "$HOME/.config/waybar/scripts/pulseaudio_controls.sh mute",
+    "on-click-middle": "$HOME/.config/waybar/scripts/pulseaudio_controls.sh switch-sink",
     "on-click-right": "sonusmix &>/dev/null",
     "tooltip": true
   },
