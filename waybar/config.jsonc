@@ -38,7 +38,8 @@
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
-      "special": ""
+      "special:special": "",
+      "games": "󰊗"
     },
     "disable-scroll": true,
     "all-outputs": true,
