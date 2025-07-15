@@ -74,6 +74,8 @@ in {
     };
   };
 
+  programs.rofi = import ./rofi pkgs;
+
   services.lorri.enable = true;
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -154,7 +156,6 @@ in {
     ### DESKTOP UTILITIES ###
     #########################
     wlogout # Power menu
-    rofi # menu
     rofi-themes # rofi themes
     themechanger
     sonusmix
@@ -179,7 +180,6 @@ in {
     ".config/hypr".source = ./hyprland;
     ".config/waybar".source = ./waybar;
     ".config/wlogout".source = ./wlogout;
-    ".config/rofi/config.rasi".source = ./rofi/config.rasi;
   };
 
   # Home Manager can also manage your environment variables through
