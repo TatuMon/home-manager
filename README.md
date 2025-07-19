@@ -41,9 +41,3 @@ Here is the list of the packages that you need to install by yourself:
 
 ### Keybinds
 All Hyprland keybinds are defined in `hyprland/modules/keybindings.conf`
-
-### Rebooting to Windows (wlogout)
-You might have seen that I added this option to wlogout and is possible that it doesn't work for you.
-
-It's very likely that this is because of how I set up wlogout to call `grub-reboot`. To **fix** this,
-you can edit the call in `wlogout/layout` to use the grub menuentry that you set up for Windows.

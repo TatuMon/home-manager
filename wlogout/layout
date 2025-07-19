@@ -11,10 +11,10 @@
     "keybind" : "e"
 }
 {
-    "label" : "windows",
-        "action" : "grub-reboot 'Windows Boot Manager (on /dev/sdb1)'",
-        "text" : "Reboot to Windows",
-        "keybind" : "w"
+    "label" : "hibernate",
+        "action" : "systemctl hibernate",
+        "text" : "Hibernate",
+        "keybind" : "h"
 }
 {
     "label" : "suspend",
