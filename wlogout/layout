@@ -11,10 +11,10 @@
     "keybind" : "e"
 }
 {
-    "label" : "hibernate",
-        "action" : "systemctl hibernate",
-        "text" : "Hibernate",
-        "keybind" : "h"
+    "label" : "windows",
+        "action" : "pkexec grub-reboot 'Windows Boot Manager (on /dev/sdb1)' && systemctl reboot",
+        "text" : "Reboot to Windows",
+        "keybind" : "w"
 }
 {
     "label" : "suspend",

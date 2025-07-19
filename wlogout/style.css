@@ -35,6 +35,10 @@ button:focus, button:active, button:hover {
 	background-image: image(url("icons/suspend.png"));
 }
 
+#windows {
+    background-image: image(url("icons/windows.png"));;
+}
+
 #hibernate {
     background-image: image(url("icons/hibernate.png"));;
 }
