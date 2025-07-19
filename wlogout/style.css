@@ -1,6 +1,7 @@
 * {
 	background-image: none;
-    font-family: "Iosevka Nerd Font Propo"
+    font-family: "Iosevka Nerd Font Propo";
+	font-size: 1.5rem;
 }
 window {
 	background-color: rgba(46, 52, 64, 0.9);
@@ -30,12 +31,16 @@ button:focus, button:active, button:hover {
     background-image: image(url("icons/logout.png"));
 }
 
-#hibernate {
-    background-image: image(url("icons/hibernate.png"));;
+#suspend {
+	background-image: image(url("icons/suspend.png"));
 }
 
-#suspend {
-    background-image: image(url("icons/suspend.png"));
+#windows {
+    background-image: image(url("icons/windows.png"));;
+}
+
+#hibernate {
+    background-image: image(url("icons/hibernate.png"));;
 }
 
 #shutdown {
