@@ -17,7 +17,9 @@ should also work for the `home-manager` NixOS module. I didn't test it.
 ### Hyprland
 This repo only contains the hyprland and waybar configuration files.
 To install the binaries, you have to do it yourself with your system's package
-manager
+manager.
+
+At least Hyprland 0.50 is expected.
 
 As I stated above, I'm using the standalone version, so I decided to install
 Hyprland system-wide and manage it using my distro's systemd.
@@ -43,7 +45,11 @@ Here is the list of the packages that you need to install by yourself:
 ### Keybinds
 All Hyprland keybinds are defined in `hyprland/modules/keybindings.conf`
 
-### Rebooting to Windows (wlogout)
+### Wlogout
+#### systemd
+wlogout options expects systemd to be the init system
+
+#### "Reboot to Windows" option
 You might have seen that I added this option to wlogout and is possible that it doesn't work for you.
 
 It's very likely that this is because of how I set up wlogout to call `grub-reboot`. To **fix** this,
