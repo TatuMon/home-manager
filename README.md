@@ -38,3 +38,12 @@ Here is the list of the packages that you need to install by yourself:
 - [hyprlock](https://github.com/hyprwm/hyprlock) (lock screen)
 - [wl-clipboard](https://github.com/bugaevc/wl-clipboard) (I prefer to have this system-wide)
 - [openssh](https://wiki.archlinux.org/title/OpenSSH) (Needed for sshy)
+
+### Keybinds
+All Hyprland keybinds are defined in `hyprland/modules/keybindings.conf`
+
+### Rebooting to Windows (wlogout)
+You might have seen that I added this option to wlogout and is possible that it doesn't work for you.
+
+It's very likely that this is because of how I set up wlogout to call `grub-reboot`. To **fix** this,
+you can edit the call in `wlogout/layout` to use the grub menuentry that you set up for Windows.
