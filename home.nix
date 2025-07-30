@@ -47,7 +47,7 @@ in {
   programs.bash = {
     enable = true;
     profileExtra = ''
-      export PATH="$PATH:$HOME/.asdf/shims"
+      export PATH="$PATH:$HOME/.asdf/shims:$HOME/Applications"
     '';
     bashrcExtra = ''
       tmux a || tmux
