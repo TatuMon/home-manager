@@ -158,7 +158,6 @@ in {
     #########################
     wlogout # Power menu
     rofi-themes # rofi themes
-    themechanger
     sonusmix
   ];
 
