@@ -77,7 +77,9 @@
     },
     "mpris": {
       "show-album-art": "always",
-      "loop-carousel": true
+      "loop-carousel": true,
+      "image-size": 96,
+      "image-radius": 12
     },
     "buttons-grid": {
       "buttons-per-row": 7,
