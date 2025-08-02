@@ -159,7 +159,7 @@ in {
     wlogout # Power menu
     rofi-themes # rofi themes
     sonusmix
-    spaceFM
+    pcmanfm
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
