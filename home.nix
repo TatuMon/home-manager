@@ -18,9 +18,7 @@ let
   wallpapers = import ./wallpapers { pkgs = pkgs; };
   rofi-themes = import ./rofi/rofi-themes.nix { pkgs = pkgs; };
 in {
-  xdg = {
-    enable = true;
-  };
+  xdg = import ./xdg;
 
   nixGL.packages = import <nixgl> { inherit pkgs; };
 
