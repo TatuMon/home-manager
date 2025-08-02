@@ -126,7 +126,6 @@ in {
     #########################
     asdf-vm # Extendable version manager
 
-
     #############
     ### FONTS ###
     #############
@@ -184,6 +183,7 @@ in {
     ".config/hypr".source = ./hyprland;
     ".config/waybar".source = ./waybar;
     ".config/wlogout".source = ./wlogout;
+    ".config/swaync".source = ./swaync;
   };
 
   # Home Manager can also manage your environment variables through
