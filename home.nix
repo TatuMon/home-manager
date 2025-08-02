@@ -31,6 +31,8 @@ in {
 
   imports = [ nixvim.homeManagerModules.nixvim ];
 
+  dconf.settings = import ./dconf;
+
   programs.nixvim = import ./nixvim pkgs;
   programs.kitty = import ./kitty {
     pkgs = pkgs;
@@ -130,6 +132,12 @@ in {
     nerd-fonts.jetbrains-mono
     nerd-fonts.fira-code
     nerd-fonts.iosevka
+
+    ##############
+    ### THEMES ###
+    ##############
+    kdePackages.breeze-gtk # icons theme
+    tokyonight-gtk-theme # theme
 
     wallpapers
     sshy
