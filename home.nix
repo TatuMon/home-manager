@@ -79,6 +79,8 @@ in {
 
   services.lorri.enable = true;
 
+  services.swaync = import ./swaync;
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "tatumon";
@@ -181,7 +183,6 @@ in {
     ".config/hypr".source = ./hyprland;
     ".config/waybar".source = ./waybar;
     ".config/wlogout".source = ./wlogout;
-    ".config/swaync".source = ./swaync;
   };
 
   # Home Manager can also manage your environment variables through
