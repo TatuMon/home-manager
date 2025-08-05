@@ -44,6 +44,8 @@ pkgs: {
   plugins = {
     vimwiki.enable = true;
 
+    sleuth.enable = true;
+
     web-devicons.enable = true;
 
     treesitter.enable = true;
