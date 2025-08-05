@@ -35,7 +35,6 @@ Like what happens with Hyprland, some software needs access to system files,
 so installing them with home-manager is not possible.
 
 Here is the list of the packages that you need to install by yourself:
-- [swaync](https://github.com/ErikReider/SwayNotificationCenter) - Notifications
 - [hyprpaper](https://github.com/hyprwm/hyprpaper) - Wallpapers
 - [hyprlock](https://github.com/hyprwm/hyprlock) - Lock screen
 - [wl-clipboard](https://github.com/bugaevc/wl-clipboard) - I prefer to have this system-wide
