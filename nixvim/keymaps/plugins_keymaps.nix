@@ -32,7 +32,7 @@ in
     options.desc = "Find files";
   }
   {
-    action = "<cmd>Telescope live_grep<cr>";
+    action = "<cmd>Telescope live_grep_args<cr>";
     key = "<C-l>";
     mode = "n";
     options.desc = "Grep files";

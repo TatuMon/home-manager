@@ -179,7 +179,10 @@ pkgs: {
       };
     };
 
-    telescope = { enable = true; };
+    telescope = {
+      enable = true;
+      extensions.live-grep-args.enable = true;
+    };
 
     undotree = { enable = true; };
 
