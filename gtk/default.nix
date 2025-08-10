@@ -5,8 +5,8 @@ pkgs: {
         package = pkgs.tokyonight-gtk-theme;
     };
     iconTheme = {
-        name = "Zafiro-icons-Dark";
-        package = pkgs.zafiro-icons;
+        name = "Kaze";
+        package = import ../icons/kaze.nix pkgs;
     };
     cursorTheme = {
         name = "Vimix-cursors";

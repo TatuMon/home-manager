@@ -1,7 +1,7 @@
 {
     "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
-        icon-theme = "Zafiro-icons-Dark";
+        icon-theme = "Kaze";
         gtk-theme = "Tokyonight-Dark";
     };
 }
