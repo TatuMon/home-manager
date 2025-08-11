@@ -30,14 +30,25 @@ pkgs: {
 
   userCommands = import ./userCommands;
 
-  extraPlugins = with pkgs.vimPlugins; [
+  extraPlugins = with pkgs; [
     {
-      plugin = outline-nvim;
+      plugin = vimPlugins.outline-nvim;
       config = "lua require('outline').setup({})";
     }
     {
-      plugin = nvim-scrollbar;
+      plugin = vimPlugins.nvim-scrollbar;
       config = "lua require('scrollbar').setup({})";
+    }
+    {
+      plugin = (vimUtils.buildVimPlugin {
+        name = "vim-blade";
+        src = fetchFromGitHub {
+          owner = "jwalton512";
+          repo = "vim-blade";
+          rev = "master";
+          hash = "sha256-DSCHZl/DydC485saAOr4kpHjzEjDxsfzRdty+y4be8Y=";
+        };
+      });
     }
   ];
 
