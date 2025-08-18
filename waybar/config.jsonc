@@ -6,7 +6,9 @@
   "modules-left": [
     "hyprland/workspaces",
     "custom/sep",
-    "wlr/taskbar"
+    "wlr/taskbar",
+    "custom/sep",
+    "custom/pomodoro"
   ],
   "modules-center": [
     "hyprland/window"
@@ -161,5 +163,12 @@
   "custom/sep": {
     "format": "|",
     "tooltip": false
+  },
+  "custom/pomodoro": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "waybar-module-pomodoro",
+    "on-click": "waybar-module-pomodoro toggle",
+    "on-click-right": "waybar-module-pomodoro reset"
   }
 }

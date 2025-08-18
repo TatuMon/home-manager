@@ -17,6 +17,7 @@ let
   sshy = import ./sshy { pkgs = pkgs; };
   wallpapers = import ./wallpapers { pkgs = pkgs; };
   rofi-themes = import ./rofi/rofi-themes.nix { pkgs = pkgs; };
+  waybar-module-pomodoro = import ./waybar/modules/waybar-module-pomodoro.nix { pkgs = pkgs; };
 in {
   xdg = import ./xdg;
 
@@ -154,6 +155,7 @@ in {
     ##############
     waybar
     wttrbar # Weather
+    waybar-module-pomodoro
 
     #########################
     ### DESKTOP UTILITIES ###
