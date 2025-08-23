@@ -120,7 +120,6 @@ in {
     spotify
     discord
     pcloud
-    anytype
 
     #########################
     ### PROGRAMMING STUFF ###
