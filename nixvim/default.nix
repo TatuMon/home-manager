@@ -53,6 +53,8 @@ pkgs: {
   ];
 
   plugins = {
+    nvim-surround.enable = true;
+
     vimwiki.enable = true;
 
     sleuth.enable = true;
