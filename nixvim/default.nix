@@ -41,12 +41,12 @@ pkgs: {
     }
     {
       plugin = (vimUtils.buildVimPlugin {
-        name = "vim-blade";
+        name = "vim-polyglot";
         src = fetchFromGitHub {
-          owner = "jwalton512";
-          repo = "vim-blade";
-          rev = "master";
-          hash = "sha256-DSCHZl/DydC485saAOr4kpHjzEjDxsfzRdty+y4be8Y=";
+          owner = "sheerun";
+          repo = "vim-polyglot";
+          rev = "v4.17.0";
+          hash = "sha256-fq+c89APtRtBjLB3BvUEbpoduQxACLfoe7veyoDE6M8=";
         };
       });
     }
