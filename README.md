@@ -2,6 +2,7 @@
 
 ![preview](https://raw.githubusercontent.com/TatuMon/home-manager/refs/heads/main/screen.jpeg "Preview")
 ![preview2](https://raw.githubusercontent.com/TatuMon/home-manager/refs/heads/main/screen2.jpg "Preview2")
+[🎶 Louie Zong - Rat Taxi Album](https://www.youtube.com/watch?v=BSyryNMZijQ&list=RDBSyryNMZijQ&start_radio=1&t=1169s)
 
 # Requirements
 - [Nix (the package manager)](https://nixos.org/learn/)
