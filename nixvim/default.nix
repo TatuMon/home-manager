@@ -1,12 +1,27 @@
 # Nixvim manual: https://nix-community.github.io/nixvim/
 pkgs: {
   enable = true;
-  colorschemes.tokyonight = {
-    enable = true;
-    settings = { style = "storm"; };
-  };
-  clipboard.providers.xclip.enable = true;
 
+  #########################
+  ### ↓ EDITOR CONFIG ↓ ###
+  #########################
+  defaultEditor = true;
+  colorschemes = {
+    tokyonight = {
+      enable = true;
+      settings = { style = "storm"; };
+    };
+    gruvbox.enable = true;
+    catppuccin.enable = true;
+    vscode.enable = true;
+  };
+  colorscheme = "gruvbox";
+  autoCmd = [{
+    command = "set filetype=env";
+    event = [ "BufRead" "BufNewFile" ];
+    pattern = [ ".env" ];
+  }];
+  clipboard.providers.xclip.enable = true;
   globals = { mapleader = " "; };
   opts = {
     number = true;
@@ -25,124 +40,43 @@ pkgs: {
     updatetime = 50;
     colorcolumn = "100";
   };
-
   keymaps = import ./keymaps/keymaps.nix;
-
   userCommands = import ./userCommands;
 
-  extraPlugins = with pkgs; [
-    {
-      plugin = vimPlugins.outline-nvim;
-      config = "lua require('outline').setup({})";
-    }
-    {
-      plugin = vimPlugins.nvim-scrollbar;
-      config = "lua require('scrollbar').setup({})";
-    }
-    {
-      plugin = (vimUtils.buildVimPlugin {
-        name = "vim-polyglot";
-        src = fetchFromGitHub {
-          owner = "sheerun";
-          repo = "vim-polyglot";
-          rev = "v4.17.0";
-          hash = "sha256-fq+c89APtRtBjLB3BvUEbpoduQxACLfoe7veyoDE6M8=";
-        };
-      });
-    }
-  ];
-
+  ###################
+  ### ↓ PLUGINS ↓ ###
+  ###################
+  extraPlugins = with pkgs; [{
+    plugin = vimPlugins.outline-nvim;
+    config = "lua require('outline').setup({})";
+  }];
   plugins = {
-    nvim-surround.enable = true;
+    ###############
+    ### ↓ git ↓ ###
+    ###############
+    gitsigns = {
+      enable = true;
+      settings.current_line_blame = true;
+    };
+    lazygit = { enable = true; };
 
+    ###############
+    ### ↓ QoL ↓ ###
+    ###############
+    dashboard = { enable = true; };
+    undotree = { enable = true; };
+    which-key.enable = true;
+    trouble.enable = true;
+    indent-blankline.enable = true;
+    actions-preview.enable = true;
     vimwiki.enable = true;
-
-    sleuth.enable = true;
-
     web-devicons.enable = true;
-
-    treesitter.enable = true;
-
     twilight.enable = true;
     barbar.enable = true;
-
-    ts-context-commentstring.enable = true;
-    comment.enable = true;
-
     transparent.enable = true;
-
-    lsp = {
-      enable = true;
-      servers = {
-        nil_ls.enable = true; # Nix
-        intelephense = { # PHP
-          enable = true;
-          package = pkgs.intelephense;
-        };
-        gopls.enable = true; # Go
-        # golangci-lint-ls.enable = true; # Golanci-lint
-        rust_analyzer = { # Rust
-          enable = true;
-          installCargo = false;
-          installRustc = false;
-        };
-        pylsp.enable = true; # Python
-        omnisharp.enable = true; # .NET
-        nginx_language_server.enable = true; # Nginx
-        lua_ls.enable = true; # Lua
-        sqls.enable = true; # SQL
-        eslint.enable = true; # HTML, CSS, JSON
-        tailwindcss.enable = true; # Tailwindcss
-        yamlls.enable = true; # YAML
-        bashls.enable = true; # Bash
-        clangd.enable = true; # C/C++
-        cmake.enable = true; # CMake
-        dockerls.enable = true; # Dockerfile
-        elixirls.enable = true; # Elixir
-        terraformls.enable = true; # Terraform
-        lemminx.enable = true; # XML
-      };
-      postConfig = ''
-        local _border = "rounded"
-
-        vim.o.winborder = _border
-
-        vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-          vim.lsp.handlers.hover, {
-            border = _border
-          }
-        )
-
-        vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-          vim.lsp.handlers.signature_help, {
-            border = _border
-          }
-        )
-
-        vim.diagnostic.config{
-          float={border=_border},
-          virtual_text=true,
-        };
-
-        require('lspconfig.ui.windows').default_options = {
-          border = _border
-        }
-      '';
-    };
-
-    typescript-tools.enable = true;
-
-    none-ls = {
-      enable = true;
-      sources.formatting = { nixfmt.enable = true; };
-    };
-
-    lint.enable = true;
-
-    luasnip.enable = true;
-
     cmp = {
       enable = true;
+      autoEnableSources = true;
       settings = {
         mapping = {
           __raw = ''
@@ -164,6 +98,7 @@ pkgs: {
           { name = "vsnip"; }
           { name = "luasnip"; }
           { name = "buffer"; }
+          { name = "dap"; }
         ];
         window = {
           completion = { __raw = "cmp.config.window.bordered()"; };
@@ -171,49 +106,173 @@ pkgs: {
         };
       };
     };
-
-    cmp-nvim-lsp = { enable = true; };
-
     barbecue = { enable = true; };
-
     lualine = { enable = true; };
-
     markdown-preview = { enable = true; };
-
-    nvim-autopairs = { enable = true; };
-
+    telescope = {
+      enable = true;
+      extensions = { live-grep-args.enable = true; };
+    };
+    luasnip.enable = true;
     neo-tree = {
       enable = true;
-      buffers = {
-        followCurrentFile = {
-          enabled = true;
-          leaveDirsOpen = true;
+      settings = {
+        filesystem = {
+          follow_current_file = {
+            enabled = true;
+            leave_dirs_open = true;
+          };
         };
       };
     };
-
-    telescope = {
+    nvim-autopairs = {
       enable = true;
-      extensions.live-grep-args.enable = true;
+      settings = { check_ts = true; };
     };
 
-    undotree = { enable = true; };
-
-    dashboard = { enable = true; };
-
-    gitsigns = {
+    lint.enable = true;
+    treesitter = {
       enable = true;
-      settings.current_line_blame = true;
+      settings = {
+        highlight = {
+          enable = true;
+          additional_vim_regex_highlighting = false;
+        };
+        indent.enable = true;
+        incrementalSelection = {
+          enable = true;
+          keymaps = {
+            initSelection = "<C-space>";
+            nodeIncremental = "<C-space>";
+            scopeIncremental = "<C-i>";
+            nodeDecremental = "<C-b>";
+          };
+        };
+        ensureInstalled = [
+          # Primary languages
+          "rust"
+          "go"
+          "typescript"
+          "javascript"
+          "tsx"
+          "jsx"
+          "php"
+          "html"
+          "css"
+          "scss"
+
+          # Templating
+          "blade" # Laravel Blade templates
+
+          # Database & Query languages
+          "prisma" # PrismaORM schema
+          "sql" # MySQL/PostgreSQL
+          "pgsql" # PostgreSQL-specific (if available)
+
+          # System & Config
+          "nix"
+          "json"
+          "yaml"
+          "toml"
+          "git_config"
+          "git_rebase"
+          "gitattributes"
+          "gitcommit"
+          "gitignore"
+
+          # Additional useful parsers
+          "bash"
+          "markdown"
+          "regex"
+          "comment" # Better comment highlighting
+        ];
+      };
+    };
+    conform-nvim = {
+      enable = true;
+      settings = {
+        format_on_save = {
+          timeout_ms = 200;
+          lsp_fallback = true;
+        };
+      };
+    };
+    ts-context-commentstring.enable = true;
+    ts-autotag.enable = true;
+    lsp = {
+      enable = true;
+      servers = {
+        nil_ls.enable = true; # Nix
+        intelephense = {
+          # PHP
+          enable = true;
+          package = pkgs.intelephense;
+        };
+        gopls.enable = true; # Go
+        # golangci-lint-ls.enable = true; # Golanci-lint
+        rust_analyzer = {
+          # Rust
+          enable = true;
+          installCargo = false;
+          installRustc = false;
+        };
+        pylsp.enable = true; # Python
+        omnisharp.enable = true; # .NET
+        nginx_language_server.enable = true; # Nginx
+        lua_ls.enable = true; # Lua
+        sqls.enable = true; # SQL
+        ts_ls.enable = true; # TS/JS (aka tsserver)
+        eslint.enable = true; # TS/JS
+        tailwindcss.enable = true; # Tailwindcss
+        yamlls.enable = true; # YAML
+        bashls.enable = true; # Bash
+        clangd.enable = true; # C/C++
+        cmake.enable = true; # CMake
+        dockerls.enable = true; # Dockerfile
+        elixirls.enable = true; # Elixir
+        terraformls.enable = true; # Terraform
+        lemminx.enable = true; # XML
+        prismals = {
+          # Prisma ORM
+          enable = true;
+          package = pkgs.vscode-extensions.prisma.prisma;
+        };
+      };
+      postConfig = ''
+        local _border = "rounded"
+
+        vim.o.winborder = _border
+
+        vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+          vim.lsp.handlers.hover, {
+            border = _border
+          }
+        )
+
+        vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+          vim.lsp.handlers.signature_help, {
+            border = _border
+          }
+        )
+
+        vim.diagnostic.config{
+          float={border=_border},
+          virtual_text = true,
+        };
+
+        require('lspconfig.ui.windows').default_options = {
+          border = _border
+        }
+      '';
     };
 
-    lazygit = { enable = true; };
-
-    which-key.enable = true;
-    trouble.enable = true;
-    indent-o-matic.enable = true;
-    indent-blankline.enable = true;
-
-    dap-go.enable = true;
+    #####################
+    ### ↓ DEBUGGING ↓ ###
+    #####################
+    dap-go = {
+      enable = true;
+      autoLoad = true;
+    };
     dap-python.enable = true;
     dap-virtual-text.enable = true;
     dap-ui.enable = true;
@@ -237,12 +296,4 @@ pkgs: {
     };
     cmp-dap.enable = true;
   };
-
-  autoCmd = [
-    {
-      command = "set filetype=hyprlang";
-      event = [ "BufRead" "BufNewFile"  ];
-      pattern = [ "hyprland/*.conf" "hypr/*.conf" ];
-    }
-  ];
 }
