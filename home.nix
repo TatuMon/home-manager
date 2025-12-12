@@ -10,25 +10,28 @@
 { pkgs, config, ... }:
 
 let
-  nixvim = import (builtins.fetchGit {
-    url = "https://github.com/nix-community/nixvim";
-  });
+  nixvim = import (
+    builtins.fetchGit {
+      url = "https://github.com/nix-community/nixvim";
+    }
+  );
 
   sshy = import ./sshy { pkgs = pkgs; };
   wallpapers = import ./wallpapers { pkgs = pkgs; };
   rofi-themes = import ./rofi/rofi-themes.nix { pkgs = pkgs; };
   waybar-module-pomodoro = import ./waybar/modules/waybar-module-pomodoro.nix { pkgs = pkgs; };
-in {
+in
+{
   xdg = import ./xdg;
 
-  nixGL.packages = import <nixgl> { inherit pkgs; };
+  targets.genericLinux.nixGL.packages = import <nixgl> { inherit pkgs; };
 
   nixpkgs.config = {
     allowUnfree = true;
     allowUnfreePredicate = (_: true);
   };
 
-  imports = [ nixvim.homeManagerModules.nixvim ];
+  imports = [ nixvim.homeModules.nixvim ];
 
   dconf.settings = import ./dconf;
   gtk = import ./gtk pkgs;
@@ -58,9 +61,11 @@ in {
 
   programs.git = {
     enable = true;
-    userEmail = "tatumonar@proton.me";
-    userName = "tatumon";
-    extraConfig = {
+    settings = {
+      user = {
+        email = "tatumonar@proton.me";
+        name = "tatumon";
+      };
       init.defaultBranch = "main";
       core.editor = "nvim";
       alias.stashall = "stash --include-untracked";
@@ -139,7 +144,7 @@ in {
     #! ATTENTION !#
     # Comment the packages bellow this line if you're planning on using a
     # desktop environment (e.g. GNOME, KDE, etc.)
-  
+
     ################
     ### HYPRLAND ###
     ################
@@ -161,7 +166,7 @@ in {
     #########################
     wlogout # Power menu
     rofi-themes # rofi themes
-    sonusmix
+    easyeffects
     pcmanfm
   ];
 
