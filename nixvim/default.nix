@@ -9,20 +9,29 @@ pkgs: {
   colorschemes = {
     tokyonight = {
       enable = true;
-      settings = { style = "storm"; };
+      settings = {
+        style = "storm";
+      };
     };
     gruvbox.enable = true;
     catppuccin.enable = true;
     vscode.enable = true;
   };
   colorscheme = "gruvbox";
-  autoCmd = [{
-    command = "set filetype=env";
-    event = [ "BufRead" "BufNewFile" ];
-    pattern = [ ".env" ];
-  }];
+  autoCmd = [
+    {
+      command = "set filetype=env";
+      event = [
+        "BufRead"
+        "BufNewFile"
+      ];
+      pattern = [ ".env" ];
+    }
+  ];
   clipboard.providers.xclip.enable = true;
-  globals = { mapleader = " "; };
+  globals = {
+    mapleader = " ";
+  };
   opts = {
     number = true;
     relativenumber = true;
@@ -46,10 +55,12 @@ pkgs: {
   ###################
   ### ↓ PLUGINS ↓ ###
   ###################
-  extraPlugins = with pkgs; [{
-    plugin = vimPlugins.outline-nvim;
-    config = "lua require('outline').setup({})";
-  }];
+  extraPlugins = with pkgs; [
+    {
+      plugin = vimPlugins.outline-nvim;
+      config = "lua require('outline').setup({})";
+    }
+  ];
   plugins = {
     ###############
     ### ↓ git ↓ ###
@@ -58,13 +69,17 @@ pkgs: {
       enable = true;
       settings.current_line_blame = true;
     };
-    lazygit = { enable = true; };
+    lazygit = {
+      enable = true;
+    };
 
     ###############
     ### ↓ QoL ↓ ###
     ###############
-    dashboard = { enable = true; };
-    undotree = { enable = true; };
+    dashboard = import ./dashboard;
+    undotree = {
+      enable = true;
+    };
     which-key.enable = true;
     trouble.enable = true;
     indent-blankline.enable = true;
@@ -90,8 +105,7 @@ pkgs: {
           '';
         };
         snippet = {
-          expand =
-            "function(args) require('luasnip').lsp_expand(args.body) end";
+          expand = "function(args) require('luasnip').lsp_expand(args.body) end";
         };
         sources = [
           { name = "nvim_lsp"; }
@@ -101,17 +115,29 @@ pkgs: {
           { name = "dap"; }
         ];
         window = {
-          completion = { __raw = "cmp.config.window.bordered()"; };
-          documentation = { __raw = "cmp.config.window.bordered()"; };
+          completion = {
+            __raw = "cmp.config.window.bordered()";
+          };
+          documentation = {
+            __raw = "cmp.config.window.bordered()";
+          };
         };
       };
     };
-    barbecue = { enable = true; };
-    lualine = { enable = true; };
-    markdown-preview = { enable = true; };
+    barbecue = {
+      enable = true;
+    };
+    lualine = {
+      enable = true;
+    };
+    markdown-preview = {
+      enable = true;
+    };
     telescope = {
       enable = true;
-      extensions = { live-grep-args.enable = true; };
+      extensions = {
+        live-grep-args.enable = true;
+      };
     };
     luasnip.enable = true;
     neo-tree = {
@@ -127,7 +153,9 @@ pkgs: {
     };
     nvim-autopairs = {
       enable = true;
-      settings = { check_ts = true; };
+      settings = {
+        check_ts = true;
+      };
     };
 
     lint.enable = true;
@@ -286,12 +314,14 @@ pkgs: {
         dapLogPoint.text = "💬";
       };
       configurations = {
-        php = [{
-          type = "php";
-          request = "attach";
-          name = "Listen for XDebug";
-          port = 9003;
-        }];
+        php = [
+          {
+            type = "php";
+            request = "attach";
+            name = "Listen for XDebug";
+            port = 9003;
+          }
+        ];
       };
     };
     cmp-dap.enable = true;
