@@ -49,15 +49,7 @@ in
   programs.zoxide.enable = true;
   programs.ripgrep.enable = true;
 
-  programs.bash = {
-    enable = true;
-    profileExtra = ''
-      export PATH="$PATH:$HOME/.asdf/shims:$HOME/Applications"
-    '';
-    bashrcExtra = ''
-      tmux a || tmux
-    '';
-  };
+  programs.bash = import ./bash;
 
   programs.git = {
     enable = true;
