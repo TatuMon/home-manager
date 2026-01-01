@@ -60,6 +60,9 @@ pkgs: {
       plugin = vimPlugins.outline-nvim;
       config = "lua require('outline').setup({})";
     }
+    {
+      plugin = vimPlugins.vim-bookmarks;
+    }
   ];
   plugins = {
     ###############
