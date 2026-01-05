@@ -129,6 +129,7 @@ in
     nerd-fonts.jetbrains-mono
     nerd-fonts.fira-code
     nerd-fonts.iosevka
+    nerd-fonts.departure-mono
 
     wallpapers
     sshy
