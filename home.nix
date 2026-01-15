@@ -101,9 +101,7 @@ in
     ################
     trash-cli
     tldr
-    ranger
     fastfetch
-    gimp
     (config.lib.nixGL.wrap brave)
 
     #######################
