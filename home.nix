@@ -115,6 +115,7 @@ in
     ### PROGRAMMING STUFF ###
     #########################
     asdf-vm # Extendable version manager
+    opencode
 
     #############
     ### FONTS ###
