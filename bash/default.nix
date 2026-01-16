@@ -10,4 +10,7 @@
   bashrcExtra = ''
     tmux a || tmux
   '';
+  shellAliases = {
+    rm = "trash-put";
+  };
 }
