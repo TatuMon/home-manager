@@ -64,15 +64,6 @@ in
     };
   };
 
-  programs.thunderbird = {
-    enable = true;
-    profiles = {
-      default = {
-        isDefault = true;
-      };
-    };
-  };
-
   programs.rofi = import ./rofi pkgs;
 
   services.lorri.enable = true;
