@@ -93,7 +93,16 @@ in
     trash-cli
     tldr
     fastfetch
-    (config.lib.nixGL.wrap vivaldi)
+
+    ###############
+    ### VIVALDI ###
+    ###############
+    (config.lib.nixGL.wrap (
+      vivaldi.override {
+        proprietaryCodecs = true;
+        enableWidevine = false;
+      }
+    ))
 
     #######################
     ### UNFREE SOFTWARE ###
