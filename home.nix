@@ -93,7 +93,7 @@ in
     trash-cli
     tldr
     fastfetch
-    (config.lib.nixGL.wrap brave)
+    (config.lib.nixGL.wrap vivaldi)
 
     #######################
     ### UNFREE SOFTWARE ###

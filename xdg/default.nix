@@ -4,17 +4,17 @@
     enable = true;
     defaultApplications = {
       "inode/directory" = [ "pcmanfm.desktop" ];
-      "text/html" = [ "brave-browser.desktop" ];
-      "x-scheme-handler/http" = [ "brave-browser.desktop" ];
-      "x-scheme-handler/https" = [ "brave-browser.desktop" ];
-      "x-scheme-handler/about" = [ "brave-browser.desktop" ];
-      "x-scheme-handler/unknown" = [ "brave-browser.desktop" ];
-      "image/png" = [ "brave-browser.desktop" ];
-      "image/jpeg" = [ "brave-browser.desktop" ];
-      "image/webp" = [ "brave-browser.desktop" ];
-      "image/svg+xml" = [ "brave-browser.desktop" ];
-      "image/gif" = [ "brave-browser.desktop" ];
-      "application/pdf" = [ "brave-browser.desktop" ];
+      "text/html" = [ "vivaldi-stable.desktop" ];
+      "x-scheme-handler/http" = [ "vivaldi-stable.desktop" ];
+      "x-scheme-handler/https" = [ "vivaldi-stable.desktop" ];
+      "x-scheme-handler/about" = [ "vivaldi-stable.desktop" ];
+      "x-scheme-handler/unknown" = [ "vivaldi-stable.desktop" ];
+      "image/png" = [ "vivaldi-stable.desktop" ];
+      "image/jpeg" = [ "vivaldi-stable.desktop" ];
+      "image/webp" = [ "vivaldi-stable.desktop" ];
+      "image/svg+xml" = [ "vivaldi-stable.desktop" ];
+      "image/gif" = [ "vivaldi-stable.desktop" ];
+      "application/pdf" = [ "vivaldi-stable.desktop" ];
     };
   };
 }
