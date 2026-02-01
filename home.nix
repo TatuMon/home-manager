@@ -115,6 +115,7 @@ in
     trash-cli
     tldr
     fastfetch
+    master.anytype
 
     ###############
     ### VIVALDI ###
