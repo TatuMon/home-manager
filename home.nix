@@ -22,14 +22,36 @@ let
   waybar-module-pomodoro = import ./waybar/modules/waybar-module-pomodoro.nix { pkgs = pkgs; };
 in
 {
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = (_: true);
+    };
+
+    overlays = [
+      (
+        final: prev:
+        let
+          pkgsMaster =
+            import
+              (builtins.fetchTarball {
+                url = "https://github.com/NixOS/nixpkgs/archive/master.tar.gz";
+              })
+              {
+                system = prev.system;
+                config.allowUnfree = true;
+              };
+        in
+        {
+          master = pkgsMaster;
+        }
+      )
+    ];
+  };
+
   xdg = import ./xdg;
 
   targets.genericLinux.nixGL.packages = import <nixgl> { inherit pkgs; };
-
-  nixpkgs.config = {
-    allowUnfree = true;
-    allowUnfreePredicate = (_: true);
-  };
 
   imports = [ nixvim.homeModules.nixvim ];
 
@@ -98,7 +120,11 @@ in
     ### VIVALDI ###
     ###############
     (config.lib.nixGL.wrap (
-      vivaldi.override {
+      # vivaldi.override {
+      #   proprietaryCodecs = true;
+      #   enableWidevine = false;
+      # }
+      master.vivaldi.override {
         proprietaryCodecs = true;
         enableWidevine = false;
       }
