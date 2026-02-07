@@ -39,7 +39,7 @@ in
   }
   # Undotree
   {
-    action = "<cmd>UndoTreeToggle<cr>";
+    action = "<cmd>UndotreeToggle<cr>";
     key = "<leader>u";
     mode = "n";
     options.desc = "Toggle undo-tree";
@@ -174,13 +174,17 @@ in
     options.desc = "Step out";
   }
   {
-    action = { __raw = "${requireDapUIRaw}.toggle"; };
+    action = {
+      __raw = "${requireDapUIRaw}.toggle";
+    };
     key = "<leader>du";
     mode = "n";
     options.desc = "Toggle DAP UI";
   }
   {
-    action = { __raw = terminateDebugRaw; };
+    action = {
+      __raw = terminateDebugRaw;
+    };
     key = "<leader>d";
     mode = "n";
     options.desc = "Terminate debugging";
