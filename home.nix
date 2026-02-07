@@ -143,6 +143,7 @@ in
     #########################
     asdf-vm # Extendable version manager
     opencode
+    just
 
     #############
     ### FONTS ###
