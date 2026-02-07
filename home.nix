@@ -85,7 +85,6 @@ in
       alias.stashall = "stash --include-untracked";
     };
   };
-
   programs.rofi = import ./rofi pkgs;
 
   services.lorri.enable = true;
@@ -154,7 +153,6 @@ in
     nerd-fonts.departure-mono
 
     wallpapers
-    sshy
 
     #! ATTENTION !#
     # Comment the packages bellow this line if you're planning on using a
@@ -181,8 +179,8 @@ in
     #########################
     wlogout # Power menu
     rofi-themes # rofi themes
-    easyeffects
-    pcmanfm
+    master.thunar # File manager
+    pavucontrol # Volume control
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
