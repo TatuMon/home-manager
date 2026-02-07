@@ -16,7 +16,6 @@ let
     }
   );
 
-  sshy = import ./sshy { pkgs = pkgs; };
   wallpapers = import ./wallpapers { pkgs = pkgs; };
   rofi-themes = import ./rofi/rofi-themes.nix { pkgs = pkgs; };
   waybar-module-pomodoro = import ./waybar/modules/waybar-module-pomodoro.nix { pkgs = pkgs; };
@@ -70,9 +69,7 @@ in
   programs.starship = import ./starship { lib = pkgs.lib; };
   programs.zoxide.enable = true;
   programs.ripgrep.enable = true;
-
   programs.bash = import ./bash;
-
   programs.git = {
     enable = true;
     settings = {
@@ -166,6 +163,7 @@ in
     hyprsysteminfo # System info
     hyprshot # Screenshots
     hyprpicker # hyprshot dependency
+    nwg-look # GTK settings editor
 
     ##############
     ### WAYBAR ###
