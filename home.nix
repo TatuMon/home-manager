@@ -54,7 +54,6 @@ in
 
   imports = [ nixvim.homeModules.nixvim ];
 
-  dconf.settings = import ./dconf;
   gtk = import ./gtk pkgs;
 
   programs.nixvim = import ./nixvim pkgs;
@@ -63,7 +62,6 @@ in
     config = config;
   };
   programs.btop.enable = true;
-
   programs.tmux = import ./tmux pkgs;
   programs.newsboat = import ./newsboat;
   programs.starship = import ./starship { lib = pkgs.lib; };
