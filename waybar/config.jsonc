@@ -80,7 +80,7 @@
     "scroll-step": 5,
     "on-click": "$HOME/.config/waybar/scripts/pulseaudio_controls.sh mute-source",
     "on-click-middle": "$HOME/.config/waybar/scripts/pulseaudio_controls.sh switch-source",
-    "on-click-right": "sonusmix &>/dev/null",
+    "on-click-right": "pavucontrol &>/dev/null",
     "tooltip": true
   },
   "pulseaudio#sink": {
@@ -100,7 +100,7 @@
     "scroll-step": 5,
     "on-click": "$HOME/.config/waybar/scripts/pulseaudio_controls.sh mute",
     "on-click-middle": "$HOME/.config/waybar/scripts/pulseaudio_controls.sh switch-sink",
-    "on-click-right": "sonusmix &>/dev/null",
+    "on-click-right": "pavucontrol &>/dev/null",
     "tooltip": true
   },
   "network": {

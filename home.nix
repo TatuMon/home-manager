@@ -50,7 +50,10 @@ in
 
   xdg = import ./xdg;
 
-  targets.genericLinux.nixGL.packages = import <nixgl> { inherit pkgs; };
+  targets.genericLinux.nixGL = {
+    packages = import <nixgl> { inherit pkgs; };
+    vulkan.enable = true;
+  };
 
   imports = [ nixvim.homeModules.nixvim ];
 
@@ -176,7 +179,7 @@ in
     wlogout # Power menu
     rofi-themes # rofi themes
     master.thunar # File manager
-    pavucontrol # Volume control
+    (config.lib.nixGL.wrap pavucontrol) # Volume control
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
