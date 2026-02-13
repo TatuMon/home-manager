@@ -21,6 +21,16 @@ let
   waybar-module-pomodoro = import ./waybar/modules/waybar-module-pomodoro.nix { pkgs = pkgs; };
 in
 {
+  nix = {
+    settings = {
+      experimental-features = [
+        "flakes"
+        "nix-command"
+      ];
+    };
+    package = pkgs.nix;
+  };
+
   nixpkgs = {
     config = {
       allowUnfree = true;
