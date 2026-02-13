@@ -13,11 +13,11 @@ pkgs: {
         style = "storm";
       };
     };
-    gruvbox.enable = true;
+    gruvbox-material.enable = true;
     catppuccin.enable = true;
     vscode.enable = true;
   };
-  colorscheme = "gruvbox";
+  colorscheme = "gruvbox-material";
   autoCmd = [
     {
       command = "set filetype=env";
